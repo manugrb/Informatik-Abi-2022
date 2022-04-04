@@ -64,5 +64,12 @@ public class FieldStructure {
 		return (bookMark == 0);
 		
 	}
+	
+	//this method is only for testing...
+	public DataElement[] getElements() {
+		
+		return elements;
+		
+	}
 
 }
