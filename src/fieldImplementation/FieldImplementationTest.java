@@ -99,5 +99,63 @@ public class FieldImplementationTest {
 		
 		return false;
 	}
+	
+	public boolean testInsertOrder(boolean print) {
+		
+		FieldStructure testObject = new FieldStructure(2);
+		
+		User testData1 = new User();
+		User testData2 = new User();
+		
+		testObject.insert(testData1);
+		testObject.insert(testData2);
+		
+		DataElement[] elements = testObject.getElements();
+		
+		if(elements[0] == testData1 && elements[1] == testData2) {
+			
+			if(print) {
+				System.out.println("insert order test passed...");	
+			}
+			return true;
+			
+		}
+		
+		if(print) {
+			System.out.println("insert order test failed...");		
+		}
+		return false;
+		
+	}
+	
+	public boolean testRemoveOrder(boolean print) {
+		
+		FieldStructure testObject = new FieldStructure(2);
+		
+		User testData1 = new User();
+		User testData2 = new User();
+		
+		testObject.insert(testData1);
+		testObject.insert(testData2);
+		
+		testObject.remove();
+		
+		DataElement[] elements = testObject.getElements();
+		
+		if(elements[0] == testData2 && elements[1] == null) {
+			
+			if(print) {
+				System.out.println("remove order test passed...");
+			}
+			return true;
+			
+		}
+		
+		if(print) {
+			System.out.println("remove order test failed...");
+		}
+		return false;
+		
+	}
 
 }
