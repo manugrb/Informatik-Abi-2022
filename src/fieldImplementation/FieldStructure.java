@@ -14,17 +14,11 @@ public class FieldStructure {
 	
 	public void insert(DataElement newElement) {
 		
-		if(bookMark <= elements.length && bookMark != -1) {
+		if(bookMark < elements.length && bookMark != -1) {
 			//enough space
 			
 			elements[bookMark] = newElement;
-			
-			if(bookMark < elements.length) {
-				bookMark++;
-			}else {
-				//the array is full
-				bookMark = -1;
-			}
+			bookMark++;
 			
 		}else {
 			
@@ -38,9 +32,15 @@ public class FieldStructure {
 		
 		DataElement returnElement = elements[0];
 		
-		for(int i = 0; i < bookMark; i++) {
+		for(int i = 0; i < bookMark - 1; i++) {
 			
 			elements[i] = elements[i + 1];
+			
+		}
+		
+		if(bookMark != -1) {
+			
+			elements[bookMark - 1] = null;
 			
 		}
 		
