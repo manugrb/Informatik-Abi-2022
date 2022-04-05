@@ -6,11 +6,11 @@ public class FieldImplementationTest {
 		
 		FieldStructure testObject = new FieldStructure(1);
 		
-		if(testObject.getElements().length == 0) {
+		if(testObject.getElements().length == 1 && testObject.getElements()[0] == null) {
 			
 			testObject.insert(new User());
 			
-			if(testObject.getElements().length == 1) {
+			if(testObject.getElements().length == 1  && testObject.getElements()[0] != null) {
 				
 				if(print) {
 					System.out.println("insert test passed.");
@@ -40,11 +40,11 @@ public class FieldImplementationTest {
 		FieldStructure testObject = new FieldStructure(1);
 		testObject.insert(new User());
 		
-		if(testObject.getElements().length == 1) {
+		if(testObject.getElements().length == 1 && testObject.getElements()[0] != null) {
 			
 			testObject.remove();
 			
-			if(testObject.getElements().length == 0) {
+			if(testObject.getElements().length == 1 && testObject.getElements()[0] == null) {
 				
 				if(print) {
 					System.out.println("remove test passed.");
@@ -115,14 +115,14 @@ public class FieldImplementationTest {
 		if(elements[0] == testData1 && elements[1] == testData2) {
 			
 			if(print) {
-				System.out.println("insert order test passed...");	
+				System.out.println("insert order test passed.");	
 			}
 			return true;
 			
 		}
 		
 		if(print) {
-			System.out.println("insert order test failed...");		
+			System.out.println("insert order test failed.");		
 		}
 		return false;
 		
@@ -145,14 +145,14 @@ public class FieldImplementationTest {
 		if(elements[0] == testData2 && elements[1] == null) {
 			
 			if(print) {
-				System.out.println("remove order test passed...");
+				System.out.println("remove order test passed.");
 			}
 			return true;
 			
 		}
 		
 		if(print) {
-			System.out.println("remove order test failed...");
+			System.out.println("remove order test failed.");
 		}
 		return false;
 		
