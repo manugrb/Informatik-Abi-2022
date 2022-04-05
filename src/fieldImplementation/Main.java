@@ -8,7 +8,7 @@ public class Main {
 		
 		boolean allTestsPassed = true;
 		
-		allTestsPassed = allTestsPassed && tester.testAdd(true);
+		allTestsPassed = allTestsPassed && tester.testInsert(true);
 		allTestsPassed = allTestsPassed && tester.testRemove(true);
 		allTestsPassed = allTestsPassed && tester.testIsEmpty(true);
 		allTestsPassed = allTestsPassed && tester.testInsertOrder(true);

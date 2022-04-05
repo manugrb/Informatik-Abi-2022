@@ -2,7 +2,7 @@ package fieldImplementation;
 
 public class FieldImplementationTest {
 	
-	public boolean testAdd(boolean print) {
+	public boolean testInsert(boolean print) {
 		
 		FieldStructure testObject = new FieldStructure(1);
 		
