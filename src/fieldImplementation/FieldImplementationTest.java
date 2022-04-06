@@ -110,6 +110,8 @@ public class FieldImplementationTest {
 		testObject.insert(testData1);
 		testObject.insert(testData2);
 		
+		testObject.insert(testData2);
+		
 		DataElement[] elements = testObject.getElements();
 		
 		if(elements[0] == testData1 && elements[1] == testData2) {
@@ -136,6 +138,8 @@ public class FieldImplementationTest {
 		User testData2 = new User();
 		
 		testObject.insert(testData1);
+		testObject.insert(testData2);
+		
 		testObject.insert(testData2);
 		
 		testObject.remove();
