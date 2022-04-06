@@ -51,9 +51,9 @@ public class FieldStructure {
 	
 	public void printAll() {
 		
-		for(DataElement element : elements) {
+		for(int i = 0; i < bookMark; i++) {
 			
-			element.print();
+			elements[i].print();
 			
 		}
 		
