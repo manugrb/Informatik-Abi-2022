@@ -157,5 +157,19 @@ public class FieldImplementationTest {
 		return false;
 		
 	}
+	
+	public void testPrintAll() {
+		
+		FieldStructure testObject = new FieldStructure(3);
+		
+		User testData1 = new User();
+		User testData2 = new User();
+		
+		testObject.insert(testData1);
+		testObject.insert(testData2);
+		
+		testObject.printAll();
+		
+	}
 
 }
