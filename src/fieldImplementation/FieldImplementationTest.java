@@ -162,6 +162,44 @@ public class FieldImplementationTest {
 		
 	}
 	
+	public boolean testGetNElements(boolean print) {
+		
+		FieldStructure testObject = new FieldStructure(2);
+		boolean testPassed = true;
+		
+		User testData1 = new User();
+		User testData2 = new User();
+		
+		testPassed = (testObject.getNElements() == 0);
+		
+		testObject.insert(testData1);
+		testObject.insert(testData2);
+		testPassed = testPassed && (testObject.getNElements() == 2);
+		
+		testObject.insert(testData2);
+		testPassed = testPassed && (testObject.getNElements() == 2);
+		
+		testObject.remove();
+		testPassed = testPassed && (testObject.getNElements() == 1);
+		
+		if(testPassed) {
+			
+			if(print) {
+				System.out.println("getNElements test passed.");
+			}
+			
+			return true;
+			
+		}
+		
+		if(print) {
+			System.out.println("getNElements test failed.");
+		}
+		
+		return false;
+		
+	}
+	
 	public void testPrintAll() {
 		
 		FieldStructure testObject = new FieldStructure(3);
