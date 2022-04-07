@@ -4,7 +4,7 @@ public class FieldImplementationTest {
 	
 	public boolean testInsert(boolean print) {
 		
-		FieldStructure testObject = new FieldStructure(1);
+		FieldStructure testObject = createTestObject(1, 0);
 		
 		if(testObject.getElements().length == 1 && testObject.getElements()[0] == null) {
 			
@@ -37,8 +37,7 @@ public class FieldImplementationTest {
 	
 	public boolean testRemove(boolean print) {
 		
-		FieldStructure testObject = new FieldStructure(1);
-		testObject.insert(new User());
+		FieldStructure testObject = createTestObject(1, 1);
 		
 		if(testObject.getElements().length == 1 && testObject.getElements()[0] != null) {
 			
@@ -71,7 +70,7 @@ public class FieldImplementationTest {
 	
 	public boolean testIsEmpty(boolean print) {
 		
-		FieldStructure testObject = new FieldStructure(1);
+		FieldStructure testObject = createTestObject(2, 0);
 		
 		if(testObject.isEmpty()) {
 			
@@ -102,7 +101,7 @@ public class FieldImplementationTest {
 	
 	public boolean testInsertOrder(boolean print) {
 		
-		FieldStructure testObject = new FieldStructure(2);
+		FieldStructure testObject = createTestObject(2, 0);
 		
 		User testData1 = new User();
 		User testData2 = new User();
@@ -132,21 +131,16 @@ public class FieldImplementationTest {
 	
 	public boolean testRemoveOrder(boolean print) {
 		
-		FieldStructure testObject = new FieldStructure(2);
-		
-		User testData1 = new User();
-		User testData2 = new User();
-		
-		testObject.insert(testData1);
-		testObject.insert(testData2);
-		
-		testObject.insert(testData2);
+		FieldStructure testObject = createTestObject(2, 1);
+
+		User testData = new User();
+		testObject.insert(testData);
 		
 		testObject.remove();
 		
 		DataElement[] elements = testObject.getElements();
 		
-		if(elements[0] == testData2 && elements[1] == null) {
+		if(elements[0] == testData && elements[1] == null) {
 			
 			if(print) {
 				System.out.println("remove order test passed.");
@@ -164,19 +158,17 @@ public class FieldImplementationTest {
 	
 	public boolean testGetNElements(boolean print) {
 		
-		FieldStructure testObject = new FieldStructure(2);
+		FieldStructure testObject = createTestObject(2, 0);
 		boolean testPassed = true;
 		
-		User testData1 = new User();
-		User testData2 = new User();
+		User testData = new User();
 		
 		testPassed = (testObject.getNElements() == 0);
 		
-		testObject.insert(testData1);
-		testObject.insert(testData2);
+		fillTestObject(testObject, 2);
 		testPassed = testPassed && (testObject.getNElements() == 2);
 		
-		testObject.insert(testData2);
+		testObject.insert(testData);
 		testPassed = testPassed && (testObject.getNElements() == 2);
 		
 		testObject.remove();
@@ -202,13 +194,7 @@ public class FieldImplementationTest {
 	
 	public void testPrintAll() {
 		
-		FieldStructure testObject = new FieldStructure(3);
-		
-		User testData1 = new User();
-		User testData2 = new User();
-		
-		testObject.insert(testData1);
-		testObject.insert(testData2);
+		FieldStructure testObject = createTestObject(5, 5);
 		
 		testObject.printAll();
 		
