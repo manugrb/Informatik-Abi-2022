@@ -1,4 +1,4 @@
-package fieldImplementation;
+package dataStructures.fieldImplementation;
 
 public class FieldStructure {
 	
