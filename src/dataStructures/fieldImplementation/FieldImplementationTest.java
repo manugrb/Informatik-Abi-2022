@@ -213,5 +213,34 @@ public class FieldImplementationTest {
 		testObject.printAll();
 		
 	}
+	
+	private FieldStructure createTestObject(int nTestElements, int listSize) {
+		
+		FieldStructure testObject = new FieldStructure(listSize);
+		
+		User[] testElements = createTestData(nTestElements);
+		for(User testElement : testElements) {
+			
+			testObject.insert(testElement);
+			
+		}
+		
+		return testObject;
+		
+	}
+	
+	private User[] createTestData(int nTestElements) {
+		
+		User[] testElements = new User[nTestElements];
+		
+		for(int i = 0; i < nTestElements; i++) {
+			
+			testElements[i] = new User();
+			
+		}
+		
+		return testElements;
+		
+	}
 
 }
