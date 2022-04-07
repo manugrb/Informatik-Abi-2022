@@ -214,18 +214,24 @@ public class FieldImplementationTest {
 		
 	}
 	
-	private FieldStructure createTestObject(int nTestElements, int listSize) {
+	private FieldStructure createTestObject(int listSize, int nTestElements) {
 		
 		FieldStructure testObject = new FieldStructure(listSize);
+		fillTestObject(testObject, nTestElements);
 		
-		User[] testElements = createTestData(nTestElements);
-		for(User testElement : testElements) {
+		return testObject;
+		
+	}
+	
+	private void fillTestObject(FieldStructure testObject, int nTestElements) {
+		
+		DataElement[] testElements =  createTestData(nTestElements);
+		
+		for(DataElement testElement: testElements) {
 			
 			testObject.insert(testElement);
 			
 		}
-		
-		return testObject;
 		
 	}
 	
