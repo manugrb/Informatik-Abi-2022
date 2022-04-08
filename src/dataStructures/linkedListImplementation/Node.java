@@ -30,6 +30,21 @@ public class Node {
 		}
 
 	}
+	
+	public void recursivePrint() {
+		
+		data.print();
+		successor.recursivePrint();
+		
+	}
+	
+	public Node getSuccessor() {
+		return successor;
+	}
+	
+	public DataElement getData() {
+		return data;
+	}
 
 	
 }

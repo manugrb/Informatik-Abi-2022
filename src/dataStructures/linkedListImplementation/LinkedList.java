@@ -5,7 +5,7 @@ import dataStructures.ListImplementation;
 
 public class LinkedList extends ListImplementation{
 	
-	DataElement firstElement;
+	Node firstElement;
 	
 	public LinkedList() {
 		
@@ -15,26 +15,39 @@ public class LinkedList extends ListImplementation{
 
 	@Override
 	public void insert(DataElement newElement) {
-		// TODO Auto-generated method stub
+		
+		if(firstElement == null) {
+			Node firstNode = new Node(newElement);
+			firstElement = firstNode;
+		}else {
+			firstElement.add(newElement);
+		}
 		
 	}
 
 	@Override
 	public DataElement remove() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		DataElement returnElement = firstElement.getData();
+		
+		Node newFirstElement = firstElement.getSuccessor();
+		firstElement = newFirstElement;
+		
+		return returnElement;
 	}
 
 	@Override
 	public void printAll() {
-		// TODO Auto-generated method stub
+		
+		if(firstElement != null) {
+			firstElement.recursivePrint();
+		}
 		
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		return firstElement == null;
 	}
 
 	@Override
