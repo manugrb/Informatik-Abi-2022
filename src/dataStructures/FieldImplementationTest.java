@@ -1,4 +1,6 @@
-package dataStructures.fieldImplementation;
+package dataStructures;
+
+import dataStructures.fieldImplementation.FieldStructure;
 
 public class FieldImplementationTest {
 	

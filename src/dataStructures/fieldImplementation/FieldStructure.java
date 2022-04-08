@@ -1,5 +1,7 @@
 package dataStructures.fieldImplementation;
 
+import dataStructures.DataElement;
+
 public class FieldStructure {
 	
 	private DataElement[] elements;

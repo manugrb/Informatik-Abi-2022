@@ -1,4 +1,4 @@
-package dataStructures.fieldImplementation;
+package dataStructures;
 
 public class User extends DataElement {
 
@@ -23,7 +23,7 @@ public class User extends DataElement {
 	}
 	
 	@Override
-	void print() {
+	public void print() {
 		
 		System.out.println("Hi, my name is " + name + ". I have " + followers + " followers and " + money + "$ in my account!");
 		
