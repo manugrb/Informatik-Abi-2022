@@ -1,5 +1,7 @@
 package dataStructures;
 
+import dataStructures.linkedListImplementation.LinkedList;
+
 public class LinkedListImplmentationTest extends ImplementationTest{
 
 	@Override
@@ -44,6 +46,22 @@ public class LinkedListImplmentationTest extends ImplementationTest{
 		
 	}
 	
+	private LinkedList createTestObject(int nTestElements) {
+		
+		LinkedList testObject = new LinkedList();
+		
+		
+		return testObject;
+		
+	}
+	
+	private void addTestDataElements(LinkedList testObject, int nTestElements) {
+		
+		for(int i = 0; i < nTestElements; i++) {
+			testObject.insert(new User());
+		}
+		
+	}
 	
 
 }
