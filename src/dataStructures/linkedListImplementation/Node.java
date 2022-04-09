@@ -38,6 +38,15 @@ public class Node {
 		
 	}
 	
+	public int getNSuccessors() {
+		
+		if(successor == null) {
+			return 0;
+		}
+		return successor.getNSuccessors() + 1;
+		
+	}
+	
 	public Node getSuccessor() {
 		return successor;
 	}

@@ -52,7 +52,9 @@ public class LinkedList extends ListImplementation{
 
 	@Override
 	public int getNElements() {
-		// TODO Auto-generated method stub
+		if(firstElement != null) {
+			return firstElement.getNSuccessors() + 1;
+		}
 		return 0;
 	}
 
