@@ -47,6 +47,17 @@ public class Node {
 		
 	}
 	
+	public int setElementsArray(DataElement[] elements) {
+		
+		int backwardsIndex = successor.getNSuccessors() + 1;
+		int elementsMaxIndex = elements.length - 1;
+		int index = elementsMaxIndex - backwardsIndex;
+		
+		elements[index] = data;
+		return backwardsIndex;
+		
+	}
+	
 	public Node getSuccessor() {
 		return successor;
 	}

@@ -60,8 +60,12 @@ public class LinkedList extends ListImplementation{
 
 	@Override
 	public DataElement[] getElements() {
-		// TODO Auto-generated method stub
-		return null;
+		
+		int nElements = getNElements();
+		DataElement[] elements = new DataElement[nElements];
+		
+		firstElement.setElementsArray(elements);
+		return elements;
 	}
 
 }
