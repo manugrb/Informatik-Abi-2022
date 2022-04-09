@@ -2,11 +2,12 @@ package dataStructures;
 
 import dataStructures.fieldImplementation.FieldStructure;
 
-public class FieldImplementationTest {
+public class FieldImplementationTest extends ImplementationTest{
 	
+	@Override
 	public boolean testInsert(boolean print) {
 		
-		FieldStructure testObject = createTestObject(1, 0);
+		FieldStructure testObject = createFieldTestObject(1, 0);
 		
 		if(testObject.getElements().length == 1 && testObject.getElements()[0] == null) {
 			
@@ -37,9 +38,10 @@ public class FieldImplementationTest {
 		
 	}
 	
+	@Override
 	public boolean testRemove(boolean print) {
 		
-		FieldStructure testObject = createTestObject(1, 1);
+		FieldStructure testObject = createFieldTestObject(1, 1);
 		
 		if(testObject.getElements().length == 1 && testObject.getElements()[0] != null) {
 			
@@ -70,9 +72,10 @@ public class FieldImplementationTest {
 		
 	}
 	
+	@Override
 	public boolean testIsEmpty(boolean print) {
 		
-		FieldStructure testObject = createTestObject(2, 0);
+		FieldStructure testObject = createFieldTestObject(2, 0);
 		
 		if(testObject.isEmpty()) {
 			
@@ -101,9 +104,10 @@ public class FieldImplementationTest {
 		return false;
 	}
 	
+	@Override
 	public boolean testInsertOrder(boolean print) {
 		
-		FieldStructure testObject = createTestObject(2, 0);
+		FieldStructure testObject = createFieldTestObject(2, 0);
 		
 		User testData1 = new User();
 		User testData2 = new User();
@@ -131,9 +135,10 @@ public class FieldImplementationTest {
 		
 	}
 	
+	@Override
 	public boolean testRemoveOrder(boolean print) {
 		
-		FieldStructure testObject = createTestObject(2, 1);
+		FieldStructure testObject = createFieldTestObject(2, 1);
 
 		User testData = new User();
 		testObject.insert(testData);
@@ -158,9 +163,10 @@ public class FieldImplementationTest {
 		
 	}
 	
+	@Override
 	public boolean testGetNElements(boolean print) {
 		
-		FieldStructure testObject = createTestObject(2, 0);
+		FieldStructure testObject = createFieldTestObject(2, 0);
 		boolean testPassed = true;
 		
 		User testData = new User();
@@ -194,15 +200,16 @@ public class FieldImplementationTest {
 		
 	}
 	
+	@Override
 	public void testPrintAll() {
 		
-		FieldStructure testObject = createTestObject(5, 5);
+		FieldStructure testObject = createFieldTestObject(5, 5);
 		
 		testObject.printAll();
 		
 	}
 	
-	private FieldStructure createTestObject(int listSize, int nTestElements) {
+	private FieldStructure createFieldTestObject(int listSize, int nTestElements) {
 		
 		FieldStructure testObject = new FieldStructure(listSize);
 		fillTestObject(testObject, nTestElements);
@@ -236,5 +243,6 @@ public class FieldImplementationTest {
 		return testElements;
 		
 	}
+	
 
 }
