@@ -7,9 +7,19 @@ public class LinkedList extends ListImplementation{
 	
 	Node firstElement;
 	
+	//for testing:
+	int arraySize;
+	
 	public LinkedList() {
 		
 		firstElement = null;
+		arraySize = 0;
+		
+	}
+	
+	public LinkedList(int arraySize) {
+		
+		this.arraySize = arraySize;
 		
 	}
 
@@ -60,12 +70,19 @@ public class LinkedList extends ListImplementation{
 
 	@Override
 	public DataElement[] getElements() {
+
+		DataElement[] elements = new DataElement[arraySize];
 		
-		int nElements = getNElements();
-		DataElement[] elements = new DataElement[nElements];
-		
-		firstElement.setElementsArray(elements);
+		if(firstElement != null) {
+			firstElement.setElementsArray(elements);
+		}
 		return elements;
+	}
+	
+	public void setArraySize(int arraySize) {
+		
+		this.arraySize = arraySize;
+		
 	}
 
 }

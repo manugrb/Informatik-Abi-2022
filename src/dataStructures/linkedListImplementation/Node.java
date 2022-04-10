@@ -48,10 +48,16 @@ public class Node {
 	}
 	
 	public int setElementsArray(DataElement[] elements) {
-		
-		int backwardsIndex = successor.getNSuccessors() + 1;
+				
+		int backwardsIndex = 0;
+		if(successor != null) {
+			backwardsIndex = successor.setElementsArray(elements) + 1;
+		}
 		int elementsMaxIndex = elements.length - 1;
 		int index = elementsMaxIndex - backwardsIndex;
+		
+		System.out.println(elementsMaxIndex + "max");
+		System.out.println(backwardsIndex + "back");
 		
 		elements[index] = data;
 		return backwardsIndex;

@@ -7,197 +7,240 @@ public class FieldImplementationTest extends ImplementationTest{
 	
 	@Override
 	public boolean testInsert(boolean print) {
+		boolean testPassed = true;
+		ListImplementation[] testObjects = createTestObjects(true, true, 1, 0);
 		
-		FieldStructure testObject = createFieldTestObject(1, 0);
+		for(ListImplementation testObject : testObjects) {
+			System.out.println("hi");
 		
-		if(testObject.getElements().length == 1 && testObject.getElements()[0] == null) {
-			
-			testObject.insert(new User());
-			
-			if(testObject.getElements().length == 1  && testObject.getElements()[0] != null) {
+			if(testObject.getElements().length == 1 && testObject.getElements()[0] == null) {
 				
-				if(print) {
-					System.out.println("insert test passed.");
+				testObject.insert(new User());
+				System.out.println(testObject);
+				
+				if(testObject.getElements().length == 1  && testObject.getElements()[0] != null) {
+					
+					if(print) {
+						System.out.println("insert test passed.");
+					}
+					break;
+					
 				}
 				
-				return true;
+				if(print) {
+					System.out.println("insert test failed.");
+				}
+				
+				testPassed = false;
+				break;
 				
 			}
-			
 			if(print) {
-				System.out.println("insert test failed.");
+				System.out.println(testObject.getElements().length);
+				System.out.println("unexpected error in insert test... Test Failed :(");
 			}
-			
-			return false;
+			testPassed = false;
+			break;
 			
 		}
-		if(print) {
-			System.out.println("unexpected error in insert test... Test Failed :(");
-		}
-		return false;
+		return testPassed;
 		
 		
 	}
 	
 	@Override
 	public boolean testRemove(boolean print) {
+		boolean testPassed = true;
 		
-		FieldStructure testObject = createFieldTestObject(1, 1);
+		ListImplementation[] testObjects = createTestObjects(true, true, 1, 1);
 		
-		if(testObject.getElements().length == 1 && testObject.getElements()[0] != null) {
+		for(ListImplementation testObject : testObjects) {
 			
-			testObject.remove();
-			
-			if(testObject.getElements().length == 1 && testObject.getElements()[0] == null) {
+			if(testObject.getElements().length == 1 && testObject.getElements()[0] != null) {
 				
-				if(print) {
-					System.out.println("remove test passed.");
+				testObject.remove();
+				
+				if(testObject.getElements().length == 1 && testObject.getElements()[0] == null) {
+					
+					if(print) {
+						System.out.println("remove test passed.");
+					}
+					break;
+					
 				}
 				
-				return true;
+				if(print) {
+					System.out.println("remove test failed.");
+				}
+				testPassed = false;
+				break;
 				
 			}
 			
 			if(print) {
-				System.out.println("remove test failed.");
+				System.out.println("unexpected error in remove test... Test Failed :(");
 			}
-			
-			return false;
+			testPassed = false;
+			break;
 			
 		}
+		return testPassed;
 		
-		if(print) {
-			System.out.println("unexpected error in remove test... Test Failed :(");
-		}
-		return false;
 		
 	}
 	
 	@Override
 	public boolean testIsEmpty(boolean print) {
+		boolean testPassed = true;
 		
-		FieldStructure testObject = createFieldTestObject(2, 0);
+		ListImplementation[] testObjects = createTestObjects(true, true, 2, 0);
 		
-		if(testObject.isEmpty()) {
-			
-			testObject.insert(new User());
-			if(!testObject.isEmpty()) {
+		for(ListImplementation testObject : testObjects) {
+		
+			if(testObject.isEmpty()) {
 				
-				if(print) {
-					System.out.println("isEmpty test passed.");
+				testObject.insert(new User());
+				if(!testObject.isEmpty()) {
+					
+					if(print) {
+						System.out.println("isEmpty test passed.");
+					}
+					
+					break;
+					
 				}
 				
-				return true;
-				
+				if(print) {
+					System.out.println("test failed.");
+				}
+				testPassed = false;
+				break;
 			}
 			
 			if(print) {
-				System.out.println("test failed.");
+				System.out.println("unexpected error in isEmptyTest... Test Failed :(");
 			}
-			
-			return false;
+			testPassed = false;
+			break;
 		}
 		
-		if(print) {
-			System.out.println("unexpected error in isEmptyTest... Test Failed :(");
-		}
-		
-		return false;
+		return testPassed;
 	}
 	
 	@Override
 	public boolean testInsertOrder(boolean print) {
 		
-		FieldStructure testObject = createFieldTestObject(2, 0);
+		boolean testPassed = true;
 		
-		User testData1 = new User();
-		User testData2 = new User();
+		ListImplementation[] testObjects = createTestObjects(true, true, 2, 0);
 		
-		testObject.insert(testData1);
-		testObject.insert(testData2);
+		for(ListImplementation testObject : testObjects) {
 		
-		testObject.insert(testData2);
-		
-		DataElement[] elements = testObject.getElements();
-		
-		if(elements[0] == testData1 && elements[1] == testData2) {
+			User testData1 = new User();
+			User testData2 = new User();
+			
+			testObject.insert(testData1);
+			testObject.insert(testData2);
+			
+			testObject.insert(testData2);
+			
+			DataElement[] elements = testObject.getElements();
+			
+			if(elements[0] == testData1 && elements[1] == testData2) {
+				
+				if(print) {
+					System.out.println("insert order test passed.");	
+				}
+				break;
+				
+			}
 			
 			if(print) {
-				System.out.println("insert order test passed.");	
+				System.out.println("insert order test failed.");		
 			}
-			return true;
-			
+			testPassed = false;
+			break;
 		}
 		
-		if(print) {
-			System.out.println("insert order test failed.");		
-		}
-		return false;
+		return testPassed;
 		
 	}
 	
 	@Override
 	public boolean testRemoveOrder(boolean print) {
 		
-		FieldStructure testObject = createFieldTestObject(2, 1);
+		boolean testPassed = true;
+		
+		ListImplementation[] testObjects = createTestObjects(true, true, 2, 1);
+		
+		for(ListImplementation testObject : testObjects) {
 
-		User testData = new User();
-		testObject.insert(testData);
-		
-		testObject.remove();
-		
-		DataElement[] elements = testObject.getElements();
-		
-		if(elements[0] == testData && elements[1] == null) {
+			User testData = new User();
+			testObject.insert(testData);
+			
+			testObject.remove();
+			
+			DataElement[] elements = testObject.getElements();
+			
+			if(elements[0] == testData && elements[1] == null) {
+				
+				if(print) {
+					System.out.println("remove order test passed.");
+				}
+				break;
+				
+			}
 			
 			if(print) {
-				System.out.println("remove order test passed.");
+				System.out.println("remove order test failed.");
 			}
-			return true;
-			
+			testPassed = false;
+			break;
 		}
 		
-		if(print) {
-			System.out.println("remove order test failed.");
-		}
-		return false;
+		return testPassed;
 		
 	}
 	
 	@Override
 	public boolean testGetNElements(boolean print) {
 		
-		FieldStructure testObject = createFieldTestObject(2, 0);
 		boolean testPassed = true;
 		
-		User testData = new User();
+		ListImplementation[] testObjects = createTestObjects(true, true, 2, 0);
 		
-		testPassed = (testObject.getNElements() == 0);
-		
-		fillTestObject(testObject, 2);
-		testPassed = testPassed && (testObject.getNElements() == 2);
-		
-		testObject.insert(testData);
-		testPassed = testPassed && (testObject.getNElements() == 2);
-		
-		testObject.remove();
-		testPassed = testPassed && (testObject.getNElements() == 1);
-		
-		if(testPassed) {
+		for(ListImplementation testObject : testObjects) {
+			boolean thisTestPassed = true;
 			
-			if(print) {
-				System.out.println("getNElements test passed.");
+			User testData = new User();
+			
+			testPassed = (testObject.getNElements() == 0);
+			
+			fillTestObject(testObject, 2);
+			testPassed = thisTestPassed && (testObject.getNElements() == 2);
+			
+			testObject.insert(testData);
+			testPassed = thisTestPassed && (testObject.getNElements() == 2);
+			
+			testObject.remove();
+			testPassed = thisTestPassed && (testObject.getNElements() == 1);
+			
+			if(testPassed) {
+				
+				if(print) {
+					System.out.println("getNElements test passed.");
+				}
+				
+				return true;
+				
 			}
 			
-			return true;
+			if(print) {
+				System.out.println("getNElements test failed.");
+			}
 			
+			return false;
 		}
-		
-		if(print) {
-			System.out.println("getNElements test failed.");
-		}
-		
-		return false;
 		
 	}
 	
@@ -216,12 +259,12 @@ public class FieldImplementationTest extends ImplementationTest{
 		
 		if(field && linkedList) {
 			testObjects = new ListImplementation[2];
-			testObjects[0] = createTestLinkedListObject(nTestElements);
+			testObjects[0] = createTestLinkedListObject(listSize, nTestElements);
 			testObjects[1] = createFieldTestObject(listSize, nTestElements);
 		}else if(field ^ linkedList) {
 			testObjects = new ListImplementation[1];
 			if(field) testObjects[0] = createFieldTestObject(listSize, nTestElements);
-			else if(linkedList) testObjects[0] = createTestLinkedListObject(nTestElements); 
+			else if(linkedList) testObjects[0] = createTestLinkedListObject(listSize, nTestElements); 
 		}else {
 			testObjects = new ListImplementation[0];
 		}
@@ -265,12 +308,12 @@ public class FieldImplementationTest extends ImplementationTest{
 		
 	}
 	
-private LinkedList createTestLinkedListObject(int nTestElements) {
+	private LinkedList createTestLinkedListObject(int listSize, int nTestElements) {
 		
-		LinkedList testObject = new LinkedList();
+		LinkedList testObject = new LinkedList(listSize);
 		
 		if(nTestElements > 0) {
-			addTestDataLinkedListElements(testObject, nTestElements);
+			fillTestObject(testObject, nTestElements);
 		}
 		
 		return testObject;
