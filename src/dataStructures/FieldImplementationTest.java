@@ -242,6 +242,8 @@ public class FieldImplementationTest extends ImplementationTest{
 			return false;
 		}
 		
+		return testPassed;
+		
 	}
 	
 	@Override
@@ -282,7 +284,7 @@ public class FieldImplementationTest extends ImplementationTest{
 		
 	}
 	
-	private void fillTestObject(FieldStructure testObject, int nTestElements) {
+	private void fillTestObject(ListImplementation testObject, int nTestElements) {
 		
 		DataElement[] testElements =  createTestData(nTestElements);
 		
@@ -317,14 +319,6 @@ public class FieldImplementationTest extends ImplementationTest{
 		}
 		
 		return testObject;
-		
-	}
-	
-	private void addTestDataLinkedListElements(LinkedList testObject, int nTestElements) {
-		
-		for(int i = 0; i < nTestElements; i++) {
-			testObject.insert(new User());
-		}
 		
 	}
 	
