@@ -1,6 +1,7 @@
 package dataStructures;
 
 import dataStructures.fieldImplementation.FieldStructure;
+import dataStructures.linkedListImplementation.LinkedList;
 
 public class FieldImplementationTest extends ImplementationTest{
 	
@@ -209,6 +210,22 @@ public class FieldImplementationTest extends ImplementationTest{
 		
 	}
 	
+	private ListImplementation[] createFildTestObjects(boolean field, boolean linkedList, int listSize, int nTestElements) {
+		
+		ListImplementation[] testObjects = null;
+		
+		if(field && linkedList) {
+			testObjects = new ListImplementation[2];
+		}else if(field ^ linkedList) {
+			testObjects = new ListImplementation[1];
+		}else {
+			testObjects = new ListImplementation[0];
+		}
+		
+		return testObjects;
+		
+	}
+	
 	private FieldStructure createFieldTestObject(int listSize, int nTestElements) {
 		
 		FieldStructure testObject = new FieldStructure(listSize);
@@ -243,6 +260,8 @@ public class FieldImplementationTest extends ImplementationTest{
 		return testElements;
 		
 	}
+	
+	
 	
 
 }
