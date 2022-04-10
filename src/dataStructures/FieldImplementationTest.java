@@ -210,14 +210,18 @@ public class FieldImplementationTest extends ImplementationTest{
 		
 	}
 	
-	private ListImplementation[] createFildTestObjects(boolean field, boolean linkedList, int listSize, int nTestElements) {
+	private ListImplementation[] createTestObjects(boolean field, boolean linkedList, int listSize, int nTestElements) {
 		
 		ListImplementation[] testObjects = null;
 		
 		if(field && linkedList) {
 			testObjects = new ListImplementation[2];
+			testObjects[0] = createTestLinkedListObject(nTestElements);
+			testObjects[1] = createFieldTestObject(listSize, nTestElements);
 		}else if(field ^ linkedList) {
 			testObjects = new ListImplementation[1];
+			if(field) testObjects[0] = createFieldTestObject(listSize, nTestElements);
+			else if(linkedList) testObjects[0] = createTestLinkedListObject(nTestElements); 
 		}else {
 			testObjects = new ListImplementation[0];
 		}
@@ -261,14 +265,19 @@ public class FieldImplementationTest extends ImplementationTest{
 		
 	}
 	
-private LinkedList createTestObject(int nTestElements) {
+private LinkedList createTestLinkedListObject(int nTestElements) {
 		
 		LinkedList testObject = new LinkedList();
+		
+		if(nTestElements > 0) {
+			addTestDataLinkedListElements(testObject, nTestElements);
+		}
+		
 		return testObject;
 		
 	}
 	
-	private void addTestDataElements(LinkedList testObject, int nTestElements) {
+	private void addTestDataLinkedListElements(LinkedList testObject, int nTestElements) {
 		
 		for(int i = 0; i < nTestElements; i++) {
 			testObject.insert(new User());
