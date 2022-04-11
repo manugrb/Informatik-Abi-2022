@@ -4,7 +4,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		FieldImplementationTest tester = new FieldImplementationTest();
+		ListImplementationTest tester = new ListImplementationTest();
 		
 		boolean allTestsPassed = true;
 		

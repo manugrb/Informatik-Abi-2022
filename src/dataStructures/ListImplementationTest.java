@@ -3,7 +3,7 @@ package dataStructures;
 import dataStructures.fieldImplementation.FieldStructure;
 import dataStructures.linkedListImplementation.LinkedList;
 
-public class FieldImplementationTest extends ImplementationTest{
+public class ListImplementationTest extends ImplementationTest{
 	
 	@Override
 	public boolean testInsert(boolean print) {
