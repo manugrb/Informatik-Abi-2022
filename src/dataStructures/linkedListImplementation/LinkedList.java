@@ -5,7 +5,7 @@ import dataStructures.ListImplementation;
 
 public class LinkedList extends ListImplementation{
 	
-	Node firstElement;
+	ListElement firstElement;
 	
 	//for testing:
 	int arraySize;
@@ -27,11 +27,11 @@ public class LinkedList extends ListImplementation{
 	public void insert(DataElement newElement) {
 		
 		if(getNElements() < arraySize) {
-			if(firstElement == null) {
+			if(firstElement instanceof LastNode) {
 				Node firstNode = new Node(newElement);
 				firstElement = firstNode;
 			}else {
-				firstElement.add(newElement);
+				firstElement.add(newElement, null);
 			}
 		}
 		

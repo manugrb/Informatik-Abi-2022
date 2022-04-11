@@ -1,5 +1,13 @@
 package dataStructures.linkedListImplementation;
 
-public abstract class ListElement {
+import dataStructures.DataElement;
 
+public abstract class ListElement {
+	
+	public abstract void add(DataElement dataElement, ListElement precessor);
+	public abstract void recursivePrint();
+	public abstract int getNSuccessors();
+	public abstract int setElementsArray(DataElement[] elements, int nElements);
+	
+	
 }

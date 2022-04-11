@@ -2,7 +2,7 @@ package dataStructures.linkedListImplementation;
 
 import dataStructures.DataElement;
 
-public class Node {
+public class Node extends ListElement{
 
 	private DataElement data;
 	private Node successor;
@@ -18,7 +18,8 @@ public class Node {
 		this.successor = successor;
 	}
 	
-	public void add(DataElement dataElement) {
+	@Override
+	public void add(DataElement dataElement, ListElement precessor) {
 		
 		if(successor == null) {
 			
@@ -26,11 +27,12 @@ public class Node {
 			setSuccessor(newSuccessor);
 			
 		}else {
-			successor.add(dataElement);
+			successor.add(dataElement, this);
 		}
 
 	}
 	
+	@Override
 	public void recursivePrint() {
 		
 		data.print();
@@ -38,6 +40,7 @@ public class Node {
 		
 	}
 	
+	@Override
 	public int getNSuccessors() {
 		
 		if(successor == null) {
@@ -47,6 +50,7 @@ public class Node {
 		
 	}
 	
+	@Override
 	public int setElementsArray(DataElement[] elements, int nElements) {
 				
 		int backwardsIndex = 0;
