@@ -26,11 +26,13 @@ public class LinkedList extends ListImplementation{
 	@Override
 	public void insert(DataElement newElement) {
 		
-		if(firstElement == null) {
-			Node firstNode = new Node(newElement);
-			firstElement = firstNode;
-		}else {
-			firstElement.add(newElement);
+		if(getNElements() < arraySize) {
+			if(firstElement == null) {
+				Node firstNode = new Node(newElement);
+				firstElement = firstNode;
+			}else {
+				firstElement.add(newElement);
+			}
 		}
 		
 	}
