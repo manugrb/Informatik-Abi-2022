@@ -23,7 +23,7 @@ public class FieldImplementationTest extends ImplementationTest{
 					if(print) {
 						System.out.println("insert test passed.");
 					}
-					break;
+					continue;
 					
 				}
 				
@@ -32,7 +32,7 @@ public class FieldImplementationTest extends ImplementationTest{
 				}
 				
 				testPassed = false;
-				break;
+				continue;
 				
 			}
 			if(print) {
@@ -40,7 +40,7 @@ public class FieldImplementationTest extends ImplementationTest{
 				System.out.println("unexpected error in insert test... Test Failed :(");
 			}
 			testPassed = false;
-			break;
+			continue;
 			
 		}
 		return testPassed;
@@ -65,7 +65,7 @@ public class FieldImplementationTest extends ImplementationTest{
 					if(print) {
 						System.out.println("remove test passed.");
 					}
-					break;
+					continue;
 					
 				}
 				
@@ -73,7 +73,7 @@ public class FieldImplementationTest extends ImplementationTest{
 					System.out.println("remove test failed.");
 				}
 				testPassed = false;
-				break;
+				continue;
 				
 			}
 			
@@ -81,7 +81,7 @@ public class FieldImplementationTest extends ImplementationTest{
 				System.out.println("unexpected error in remove test... Test Failed :(");
 			}
 			testPassed = false;
-			break;
+			continue;
 			
 		}
 		return testPassed;
@@ -97,6 +97,8 @@ public class FieldImplementationTest extends ImplementationTest{
 		
 		for(ListImplementation testObject : testObjects) {
 		
+			System.out.println("helo");
+			
 			if(testObject.isEmpty()) {
 				
 				testObject.insert(new User());
@@ -106,7 +108,7 @@ public class FieldImplementationTest extends ImplementationTest{
 						System.out.println("isEmpty test passed.");
 					}
 					
-					break;
+					continue;
 					
 				}
 				
@@ -114,14 +116,14 @@ public class FieldImplementationTest extends ImplementationTest{
 					System.out.println("test failed.");
 				}
 				testPassed = false;
-				break;
+				continue;
 			}
 			
 			if(print) {
 				System.out.println("unexpected error in isEmptyTest... Test Failed :(");
 			}
 			testPassed = false;
-			break;
+			continue;
 		}
 		
 		return testPassed;
@@ -135,6 +137,8 @@ public class FieldImplementationTest extends ImplementationTest{
 		ListImplementation[] testObjects = createTestObjects(true, true, 2, 0);
 		
 		for(ListImplementation testObject : testObjects) {
+			
+			System.out.println(testObject);
 		
 			User testData1 = new User();
 			User testData2 = new User();
@@ -151,7 +155,7 @@ public class FieldImplementationTest extends ImplementationTest{
 				if(print) {
 					System.out.println("insert order test passed.");	
 				}
-				break;
+				continue;
 				
 			}
 			
@@ -159,7 +163,7 @@ public class FieldImplementationTest extends ImplementationTest{
 				System.out.println("insert order test failed.");		
 			}
 			testPassed = false;
-			break;
+			continue;
 		}
 		
 		return testPassed;
@@ -187,7 +191,7 @@ public class FieldImplementationTest extends ImplementationTest{
 				if(print) {
 					System.out.println("remove order test passed.");
 				}
-				break;
+				continue;
 				
 			}
 			
@@ -195,7 +199,7 @@ public class FieldImplementationTest extends ImplementationTest{
 				System.out.println("remove order test failed.");
 			}
 			testPassed = false;
-			break;
+			continue;
 		}
 		
 		return testPassed;
