@@ -197,6 +197,8 @@ public class FieldImplementationTest extends ImplementationTest{
 			
 			if(print) {
 				System.out.println("remove order test failed.");
+				System.out.println(elements[0]);
+				System.out.println(elements[1]);
 			}
 			testPassed = false;
 			continue;

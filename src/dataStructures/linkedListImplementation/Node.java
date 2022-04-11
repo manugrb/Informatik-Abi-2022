@@ -47,13 +47,13 @@ public class Node {
 		
 	}
 	
-	public int setElementsArray(DataElement[] elements) {
+	public int setElementsArray(DataElement[] elements, int nElements) {
 				
 		int backwardsIndex = 0;
 		if(successor != null) {
-			backwardsIndex = successor.setElementsArray(elements) + 1;
+			backwardsIndex = successor.setElementsArray(elements, nElements) + 1;
 		}
-		int elementsMaxIndex = elements.length - 1;
+		int elementsMaxIndex = nElements - 1;
 		int index = elementsMaxIndex - backwardsIndex;
 		
 		System.out.println(elementsMaxIndex + "max");

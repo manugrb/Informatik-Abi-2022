@@ -76,7 +76,7 @@ public class LinkedList extends ListImplementation{
 		DataElement[] elements = new DataElement[arraySize];
 		
 		if(firstElement != null) {
-			firstElement.setElementsArray(elements);
+			firstElement.setElementsArray(elements, getNElements());
 		}
 		return elements;
 	}
