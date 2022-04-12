@@ -5,7 +5,7 @@ import dataStructures.DataElement;
 public class Node extends ListElement{
 
 	private DataElement data;
-	private Node successor;
+	private ListElement successor;
 	
 	public Node(DataElement data) {
 		
@@ -14,7 +14,7 @@ public class Node extends ListElement{
 		
 	}
 	
-	public void setSuccessor(Node successor) {
+	public void setSuccessor(ListElement successor) {
 		this.successor = successor;
 	}
 	
