@@ -12,13 +12,14 @@ public class LinkedList extends ListImplementation{
 	
 	public LinkedList() {
 		
-		firstElement = null;
+		firstElement = new LastNode();
 		arraySize = 0;
 		
 	}
 	
 	public LinkedList(int arraySize) {
 		
+		this.firstElement = new LastNode();
 		this.arraySize = arraySize;
 		
 	}
