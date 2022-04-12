@@ -40,12 +40,25 @@ public class LinkedList extends ListImplementation{
 	@Override
 	public DataElement remove() {
 		
-		DataElement returnElement = firstElement.getData();
+		if(firstElement instanceof Node) {
+			
+			Node firstNode = (Node) firstElement;
+			DataElement returnElement = firstNode.getData();
+			
+			Node newFirstElement = firstNode.getSuccessor();
+			firstElement = newFirstElement;
+			
+			return returnElement;
+			
+		}else {
+			
+			System.out.println("no elements to remove...");
+			return null;
+			
+		}
 		
-		Node newFirstElement = firstElement.getSuccessor();
-		firstElement = newFirstElement;
 		
-		return returnElement;
+		
 	}
 
 	@Override
