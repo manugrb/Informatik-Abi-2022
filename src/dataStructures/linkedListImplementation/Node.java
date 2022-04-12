@@ -68,7 +68,7 @@ public class Node extends ListElement{
 		
 	}
 	
-	public Node getSuccessor() {
+	public ListElement getSuccessor() {
 		return successor;
 	}
 	
