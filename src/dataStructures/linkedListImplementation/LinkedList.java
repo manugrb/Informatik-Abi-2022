@@ -74,7 +74,7 @@ public class LinkedList extends ListImplementation{
 
 	@Override
 	public boolean isEmpty() {
-		return firstElement == null;
+		return (firstElement instanceof LastNode);
 	}
 
 	@Override

@@ -11,13 +11,10 @@ public class ListImplementationTest extends ImplementationTest{
 		ListImplementation[] testObjects = createTestObjects(true, true, 1, 0);
 		
 		for(ListImplementation testObject : testObjects) {
-			System.out.println("hi");
 		
 			if(testObject.getElements().length == 1 && testObject.getElements()[0] == null) {
 				
 				testObject.insert(new User());
-				System.out.println(testObject);
-				
 				if(testObject.getElements().length == 1  && testObject.getElements()[0] != null) {
 					
 					if(print) {
@@ -28,8 +25,6 @@ public class ListImplementationTest extends ImplementationTest{
 				}
 				
 				if(print) {
-					System.out.println(testObject.getElements().length);
-					System.out.println(testObject.getElements()[0]);
 					System.out.println("insert test failed.");
 				}
 				
@@ -38,7 +33,6 @@ public class ListImplementationTest extends ImplementationTest{
 				
 			}
 			if(print) {
-				System.out.println(testObject.getElements().length);
 				System.out.println("unexpected error in insert test... Test Failed :(");
 			}
 			testPassed = false;
@@ -98,8 +92,6 @@ public class ListImplementationTest extends ImplementationTest{
 		ListImplementation[] testObjects = createTestObjects(true, true, 2, 0);
 		
 		for(ListImplementation testObject : testObjects) {
-		
-			System.out.println("helo");
 			
 			if(testObject.isEmpty()) {
 				
@@ -115,7 +107,7 @@ public class ListImplementationTest extends ImplementationTest{
 				}
 				
 				if(print) {
-					System.out.println("test failed.");
+					System.out.println("isEmpty test failed.");
 				}
 				testPassed = false;
 				continue;
@@ -139,8 +131,6 @@ public class ListImplementationTest extends ImplementationTest{
 		ListImplementation[] testObjects = createTestObjects(true, true, 2, 0);
 		
 		for(ListImplementation testObject : testObjects) {
-			
-			System.out.println(testObject);
 		
 			User testData1 = new User();
 			User testData2 = new User();
@@ -199,8 +189,6 @@ public class ListImplementationTest extends ImplementationTest{
 			
 			if(print) {
 				System.out.println("remove order test failed.");
-				System.out.println(elements[0]);
-				System.out.println(elements[1]);
 			}
 			testPassed = false;
 			continue;
