@@ -6,20 +6,23 @@ import dataStructures.User;
 public class LastNode extends ListElement{
 
 	@Override
-	public void add(DataElement dataElement, ListElement precessor) {
-		// TODO Auto-generated method stub
+	public void add(DataElement dataElement, Node precessor) {
+		
+		Node newElement = new Node(dataElement);
+		newElement.setSuccessor(this);
+		precessor.setSuccessor(newElement);
 		
 	}
 
 	@Override
 	public void recursivePrint() {
-		// TODO Auto-generated method stub
+		
+		System.out.println("End of list reached!");
 		
 	}
 
 	@Override
 	public int getNSuccessors() {
-		// TODO Auto-generated method stub
 		return -1;
 	}
 
