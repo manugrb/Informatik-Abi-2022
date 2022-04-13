@@ -28,7 +28,6 @@ public class LinkedList extends ListImplementation{
 	public void insert(DataElement newElement) {
 		
 		if(getNElements() < arraySize) {
-			System.out.println("adding...");
 			if(firstElement instanceof LastNode) {
 				Node firstNode = new Node(newElement);
 				firstNode.setSuccessor(firstElement);
