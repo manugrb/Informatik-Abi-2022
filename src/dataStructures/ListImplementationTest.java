@@ -28,6 +28,8 @@ public class ListImplementationTest extends ImplementationTest{
 				}
 				
 				if(print) {
+					System.out.println(testObject.getElements().length);
+					System.out.println(testObject.getElements()[0]);
 					System.out.println("insert test failed.");
 				}
 				

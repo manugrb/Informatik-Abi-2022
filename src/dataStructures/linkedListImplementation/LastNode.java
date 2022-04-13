@@ -1,6 +1,7 @@
 package dataStructures.linkedListImplementation;
 
 import dataStructures.DataElement;
+import dataStructures.User;
 
 public class LastNode extends ListElement{
 
@@ -19,13 +20,12 @@ public class LastNode extends ListElement{
 	@Override
 	public int getNSuccessors() {
 		// TODO Auto-generated method stub
-		return 0;
+		return -1;
 	}
 
 	@Override
 	public int setElementsArray(DataElement[] elements, int nElements) {
-		// TODO Auto-generated method stub
-		return 0;
+		return -1;
 	}
 
 }

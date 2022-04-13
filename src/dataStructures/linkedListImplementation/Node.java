@@ -63,6 +63,7 @@ public class Node extends ListElement{
 		System.out.println(elementsMaxIndex + "max");
 		System.out.println(backwardsIndex + "back");
 		
+		System.out.println(backwardsIndex + " backwards Index");
 		elements[index] = data;
 		return backwardsIndex;
 		
