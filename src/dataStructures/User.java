@@ -33,7 +33,16 @@ public class User extends DataElement {
 	//users are sorted by the amount of followers they have...
 	@Override
 	public int compare(DataElement element) {
-		return 0;
+		
+		if(element instanceof User) {
+			
+			return ((User) element).getNFollowers() - this.followers;
+			
+		}else return 0;
+	}
+	
+	public int getNFollowers() {
+		return this.followers;
 	}
 
 }
