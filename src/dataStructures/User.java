@@ -30,4 +30,10 @@ public class User extends DataElement {
 
 	}
 
+	//users are sorted by the amount of followers they have...
+	@Override
+	public int compare(DataElement element) {
+		return 0;
+	}
+
 }
