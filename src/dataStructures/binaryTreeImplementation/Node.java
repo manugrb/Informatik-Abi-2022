@@ -49,5 +49,21 @@ public class Node extends TreeElement{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	
+	//this method is used to seal the element by adding an instance of lastNode on each free successor attribute.
+	public void seal() {
+		
+		sealSmaller();
+		sealBigger();
+		
+	}
+	
+	public void sealSmaller() {
+		this.smallerSuccessor = new LastNode();
+	}
+	
+	public void sealBigger() {
+		this.biggerSuccessor = new LastNode();
+	}
 
 }
