@@ -1,5 +1,6 @@
 package dataStructures;
 
+import dataStructures.binaryTreeImplementation.BinaryTree;
 import dataStructures.fieldImplementation.FieldStructure;
 import dataStructures.linkedListImplementation.LinkedList;
 
@@ -309,6 +310,18 @@ public class ListImplementationTest extends ImplementationTest{
 	private LinkedList createTestLinkedListObject(int listSize, int nTestElements) {
 		
 		LinkedList testObject = new LinkedList(listSize);
+		
+		if(nTestElements > 0) {
+			fillTestObject(testObject, nTestElements);
+		}
+		
+		return testObject;
+		
+	}
+	
+	private BinaryTree createBinaryTreeObject(int listSize, int nTestElements) {
+		
+		BinaryTree testObject = new BinaryTree(listSize);
 		
 		if(nTestElements > 0) {
 			fillTestObject(testObject, nTestElements);
