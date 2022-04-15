@@ -17,7 +17,14 @@ public class BinaryTree extends ListImplementation{
 	
 	@Override
 	public void insert(DataElement newElement) {
-		// TODO Auto-generated method stub
+		
+		if(firstElement instanceof LastNode) {
+			Node newFirstElement = new Node(newElement);
+			newFirstElement.seal();
+			firstElement = newFirstElement;
+		}else {
+			firstElement.add(newElement, null, false);
+		}
 		
 	}
 

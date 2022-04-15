@@ -15,8 +15,14 @@ public class Node extends TreeElement{
 	}
 
 	@Override
-	public void add(DataElement dataElement) {
-		// TODO Auto-generated method stub
+	public void add(DataElement dataElement, Node precessor, boolean smaller) {
+		
+		if(dataElement.compare(data) > 0) {
+			biggerSuccessor.add(dataElement, precessor, false);
+		}
+		else {
+			smallerSuccessor.add(dataElement, precessor, true);
+		}
 		
 	}
 
@@ -64,6 +70,14 @@ public class Node extends TreeElement{
 	
 	public void sealBigger() {
 		this.biggerSuccessor = new LastNode();
+	}
+	
+	public void setSmallerSuccessor(Node newSucessor) {
+		this.smallerSuccessor = newSucessor;
+	}
+	
+	public void setBiggerSuccessor(Node newSucessor) {
+		this.biggerSuccessor = newSucessor;
 	}
 
 }
