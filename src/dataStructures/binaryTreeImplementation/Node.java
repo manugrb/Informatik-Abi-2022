@@ -3,6 +3,16 @@ package dataStructures.binaryTreeImplementation;
 import dataStructures.DataElement;
 
 public class Node extends TreeElement{
+	
+	private DataElement data;
+	private TreeElement smallerSuccessor;
+	private TreeElement biggerSuccessor;
+	
+	public Node(DataElement data) {
+		this.data = data;
+		this.smallerSuccessor = null;
+		this.biggerSuccessor = null;
+	}
 
 	@Override
 	public void add(DataElement dataElement) {
