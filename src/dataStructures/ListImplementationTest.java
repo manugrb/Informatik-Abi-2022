@@ -9,7 +9,7 @@ public class ListImplementationTest extends ImplementationTest{
 	@Override
 	public boolean testInsert(boolean print) {
 		boolean testPassed = true;
-		ListImplementation[] testObjects = createTestObjects(true, true, 1, 0);
+		ListImplementation[] testObjects = createTestObjects(true, true, true, 1, 0);
 		
 		for(ListImplementation testObject : testObjects) {
 		
@@ -49,7 +49,7 @@ public class ListImplementationTest extends ImplementationTest{
 	public boolean testRemove(boolean print) {
 		boolean testPassed = true;
 		
-		ListImplementation[] testObjects = createTestObjects(true, true, 1, 1);
+		ListImplementation[] testObjects = createTestObjects(true, true, true, 1, 1);
 		
 		for(ListImplementation testObject : testObjects) {
 			
@@ -90,7 +90,7 @@ public class ListImplementationTest extends ImplementationTest{
 	public boolean testIsEmpty(boolean print) {
 		boolean testPassed = true;
 		
-		ListImplementation[] testObjects = createTestObjects(true, true, 2, 0);
+		ListImplementation[] testObjects = createTestObjects(true, true, true, 2, 0);
 		
 		for(ListImplementation testObject : testObjects) {
 			
@@ -129,7 +129,7 @@ public class ListImplementationTest extends ImplementationTest{
 		
 		boolean testPassed = true;
 		
-		ListImplementation[] testObjects = createTestObjects(true, true, 2, 0);
+		ListImplementation[] testObjects = createTestObjects(true, true, true, 2, 0);
 		
 		for(ListImplementation testObject : testObjects) {
 		
@@ -168,7 +168,7 @@ public class ListImplementationTest extends ImplementationTest{
 		
 		boolean testPassed = true;
 		
-		ListImplementation[] testObjects = createTestObjects(true, true, 2, 1);
+		ListImplementation[] testObjects = createTestObjects(true, true, true, 2, 1);
 		
 		for(ListImplementation testObject : testObjects) {
 
@@ -204,7 +204,7 @@ public class ListImplementationTest extends ImplementationTest{
 		
 		boolean testPassed = true;
 		
-		ListImplementation[] testObjects = createTestObjects(true, true, 2, 0);
+		ListImplementation[] testObjects = createTestObjects(true, true, true, 2, 0);
 		
 		for(ListImplementation testObject : testObjects) {
 			boolean thisTestPassed = true;
@@ -252,21 +252,30 @@ public class ListImplementationTest extends ImplementationTest{
 		
 	}
 	
-	private ListImplementation[] createTestObjects(boolean field, boolean linkedList, int listSize, int nTestElements) {
+	private ListImplementation[] createTestObjects(boolean field, boolean linkedList, boolean binaryTree, int listSize, int nTestElements) {
 		
 		ListImplementation[] testObjects = null;
 		
-		if(field && linkedList) {
-			testObjects = new ListImplementation[2];
+		if(field && linkedList && binaryTree) {
+			testObjects = new ListImplementation[3];
 			testObjects[0] = createTestLinkedListObject(listSize, nTestElements);
 			testObjects[1] = createFieldTestObject(listSize, nTestElements);
-		}else if(field ^ linkedList) {
+			testObjects[2] = createBinaryTreeObject(listSize, nTestElements);
+		}else if(field && linkedList ^ field && binaryTree ^ linkedList && binaryTree) {
+			testObjects = new ListImplementation[2];
+			if(linkedList) testObjects[0] = createTestLinkedListObject(listSize, nTestElements);
+			if(linkedList && field) testObjects[1] = createFieldTestObject(listSize, nTestElements);
+			if(!linkedList && field) testObjects[0] = createFieldTestObject(listSize, nTestElements);
+			if(binaryTree) createBinaryTreeObject(listSize, nTestElements);
+		}else if(field ^ linkedList ^ binaryTree) {
 			testObjects = new ListImplementation[1];
 			if(field) testObjects[0] = createFieldTestObject(listSize, nTestElements);
-			else if(linkedList) testObjects[0] = createTestLinkedListObject(listSize, nTestElements); 
+			else if(linkedList) testObjects[0] = createTestLinkedListObject(listSize, nTestElements);
+			else if(binaryTree) testObjects[0] = createBinaryTreeObject(listSize, nTestElements);
 		}else {
 			testObjects = new ListImplementation[0];
 		}
+	
 		
 		return testObjects;
 		
@@ -331,5 +340,4 @@ public class ListImplementationTest extends ImplementationTest{
 		
 	}
 	
-
 }
