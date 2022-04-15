@@ -18,14 +18,16 @@ public class BinaryTree extends ListImplementation{
 	@Override
 	public void insert(DataElement newElement) {
 		
-		if(firstElement instanceof LastNode) {
-			Node newFirstElement = new Node(newElement);
-			newFirstElement.seal();
-			firstElement = newFirstElement;
-		}else {
-			firstElement.add(newElement, null, false);
+		if(getNElements() < arraySize) {
+			if(firstElement instanceof LastNode) {
+				Node newFirstElement = new Node(newElement);
+				newFirstElement.seal();
+				firstElement = newFirstElement;
+			}else {
+				firstElement.add(newElement, null, false);
+			}
 		}
-		
+			
 	}
 
 	@Override
@@ -54,8 +56,10 @@ public class BinaryTree extends ListImplementation{
 
 	@Override
 	public DataElement[] getElements() {
-		// TODO Auto-generated method stub
-		return null;
+		DataElement[] elements = new DataElement[arraySize];
+		firstElement.setElementsArrayInOrder(elements, arraySize, -1);
+		
+		return elements;
 	}
 	
 	

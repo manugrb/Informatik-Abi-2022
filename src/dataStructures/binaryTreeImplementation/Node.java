@@ -51,9 +51,10 @@ public class Node extends TreeElement{
 	}
 
 	@Override
-	public int setElementsArrayInOrder(DataElement[] elements, int nElements) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int setElementsArrayInOrder(DataElement[] elements, int nElements, int currentIndex) {
+		int index = smallerSuccessor.setElementsArrayInOrder(elements, nElements, currentIndex) + 1;
+		int continueWithIndex = biggerSuccessor.setElementsArrayInOrder(elements, nElements, index);
+		return continueWithIndex;
 	}
 	
 	//this method is used to seal the element by adding an instance of lastNode on each free successor attribute.

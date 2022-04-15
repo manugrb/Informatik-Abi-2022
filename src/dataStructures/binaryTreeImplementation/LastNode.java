@@ -41,9 +41,8 @@ public class LastNode extends TreeElement{
 	}
 
 	@Override
-	public int setElementsArrayInOrder(DataElement[] elements, int nElements) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int setElementsArrayInOrder(DataElement[] elements, int nElements, int currentIndex) {
+		return currentIndex;
 	}
 
 }

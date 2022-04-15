@@ -1,7 +1,6 @@
 package dataStructures.linkedListImplementation;
 
 import dataStructures.DataElement;
-import dataStructures.User;
 
 public class LastNode extends ListElement{
 
