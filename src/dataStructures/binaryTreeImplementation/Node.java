@@ -53,7 +53,8 @@ public class Node extends TreeElement{
 	@Override
 	public int setElementsArrayInOrder(DataElement[] elements, int nElements, int currentIndex) {
 		int index = smallerSuccessor.setElementsArrayInOrder(elements, nElements, currentIndex) + 1;
-		int continueWithIndex = biggerSuccessor.setElementsArrayInOrder(elements, nElements, index);
+		elements[index] = this.data;
+		int continueWithIndex = biggerSuccessor.setElementsArrayInOrder(elements, nElements, index);	
 		return continueWithIndex;
 	}
 	
@@ -80,5 +81,7 @@ public class Node extends TreeElement{
 	public void setBiggerSuccessor(Node newSucessor) {
 		this.biggerSuccessor = newSucessor;
 	}
+	
+	
 
 }
