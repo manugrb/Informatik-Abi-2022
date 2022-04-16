@@ -26,6 +26,8 @@ public class ListImplementationTest extends ImplementationTest{
 				}
 				
 				if(print) {
+					System.out.println(testObject.getElements().length);
+					System.out.println(testObject.getElements()[0]);
 					System.out.println("insert test failed.");
 				}
 				
@@ -129,7 +131,7 @@ public class ListImplementationTest extends ImplementationTest{
 		
 		boolean testPassed = true;
 		
-		ListImplementation[] testObjects = createTestObjects(true, true, true, 2, 0);
+		ListImplementation[] testObjects = createTestObjects(true, true, false, 2, 0);
 		
 		for(ListImplementation testObject : testObjects) {
 		
@@ -168,7 +170,7 @@ public class ListImplementationTest extends ImplementationTest{
 		
 		boolean testPassed = true;
 		
-		ListImplementation[] testObjects = createTestObjects(true, true, true, 2, 1);
+		ListImplementation[] testObjects = createTestObjects(true, true, false, 2, 1);
 		
 		for(ListImplementation testObject : testObjects) {
 
@@ -246,9 +248,13 @@ public class ListImplementationTest extends ImplementationTest{
 	@Override
 	public void testPrintAll() {
 		
-		FieldStructure testObject = createFieldTestObject(5, 5);
+		ListImplementation[] testObjects = createTestObjects(true, true, true, 5, 5);
 		
-		testObject.printAll();
+		for(ListImplementation testObject : testObjects) {
+			testObject.printAll();
+		}
+		
+		
 		
 	}
 	
