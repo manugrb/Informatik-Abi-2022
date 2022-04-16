@@ -5,15 +5,17 @@ import dataStructures.DataElement;
 public class LastNode extends TreeElement{
 
 	@Override
-	public void add(DataElement dataElement, Node precessor, boolean smaller) {
+	public Node add(DataElement dataElement) {
 		
 		Node newNode = new Node(dataElement);
-		if(smaller) {	
-			precessor.setSmallerSuccessor(newNode);
-		}else {
-			precessor.setBiggerSuccessor(newNode);
-		}
+		newNode.seal();
+		return newNode;
 		
+	}
+	
+	@Override
+	public Node remove(DataElement dataElement) {
+		return null;
 	}
 
 	@Override

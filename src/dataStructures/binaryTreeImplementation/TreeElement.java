@@ -4,8 +4,8 @@ import dataStructures.DataElement;
 
 public abstract class TreeElement {
 
-	public abstract void add(DataElement dataElement, Node precessor, boolean smaller);
-	public abstract DataElement remove(DataElement dataElement);
+	public abstract Node add(DataElement dataElement);
+	public abstract Node remove(DataElement dataElement);
 	public abstract void printPreOrder();
 	public abstract void printInOrder();
 	public abstract void printPostOrder();

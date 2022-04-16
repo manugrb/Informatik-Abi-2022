@@ -15,15 +15,44 @@ public class Node extends TreeElement{
 	}
 
 	@Override
-	public void add(DataElement dataElement, Node precessor, boolean smaller) {
+	public Node add(DataElement dataElement) {
 		
 		if(dataElement.compare(data) > 0) {
-			biggerSuccessor.add(dataElement, precessor, false);
+			biggerSuccessor = biggerSuccessor.add(dataElement);
 		}
 		else {
-			smallerSuccessor.add(dataElement, precessor, true);
+			smallerSuccessor = smallerSuccessor.add(dataElement);
 		}
 		
+		return this;
+		
+	}
+	
+	@Override
+	public Node remove(DataElement dataElement) {
+		
+		if(this.data == dataElement) {
+			
+			smallerSuccessor = (Node) smallerSuccessor.add(dataElement);
+			return (Node) smallerSuccessor;
+			
+		}else {
+		
+			Node replacement = smallerSuccessor.remove(dataElement);
+			if(replacement != null) {
+				smallerSuccessor = replacement;
+			}else {
+				
+				replacement = biggerSuccessor.remove(dataElement);
+				if(replacement!= null) {
+					biggerSuccessor = replacement;
+				}
+				
+			}
+			
+			return null;
+			
+		}
 	}
 
 	@Override
@@ -82,6 +111,8 @@ public class Node extends TreeElement{
 		this.biggerSuccessor = newSucessor;
 	}
 	
-	
+	public DataElement getData() {
+		return data;
+	}
 
 }

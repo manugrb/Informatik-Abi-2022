@@ -19,20 +19,22 @@ public class BinaryTree extends ListImplementation{
 	public void insert(DataElement newElement) {
 		
 		if(getNElements() < arraySize) {
-			if(firstElement instanceof LastNode) {
-				Node newFirstElement = new Node(newElement);
-				newFirstElement.seal();
-				firstElement = newFirstElement;
-			}else {
-				firstElement.add(newElement, null, false);
-			}
+			firstElement = firstElement.add(newElement);
 		}
 			
 	}
 
 	@Override
 	public DataElement remove() {
-		// TODO Auto-generated method stub
+		
+		if(!(firstElement instanceof LastNode)) {
+			
+			DataElement elementToRemove = ((Node) firstElement).getData();
+			((Node) firstElement).remove(elementToRemove);
+			
+		}
+		
+		
 		return null;
 	}
 
