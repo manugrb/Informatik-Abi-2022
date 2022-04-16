@@ -75,8 +75,10 @@ public class Node extends TreeElement{
 
 	@Override
 	public int count() {
-		// TODO Auto-generated method stub
-		return 0;
+		int smallerSuccessors = smallerSuccessor.count();
+		int biggerSuccessors = biggerSuccessor.count();
+		int total = smallerSuccessors + biggerSuccessors;
+		return (total + 1);
 	}
 
 	@Override

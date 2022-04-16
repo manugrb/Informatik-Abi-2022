@@ -38,7 +38,6 @@ public class LastNode extends TreeElement{
 
 	@Override
 	public int count() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 

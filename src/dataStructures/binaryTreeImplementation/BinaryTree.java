@@ -52,8 +52,8 @@ public class BinaryTree extends ListImplementation{
 
 	@Override
 	public int getNElements() {
-		// TODO Auto-generated method stub
-		return 0;
+		int nElements = firstElement.count();
+		return nElements;
 	}
 
 	@Override
