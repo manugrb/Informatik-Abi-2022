@@ -33,7 +33,8 @@ public class Node extends TreeElement{
 		
 		if(this.data == dataElement) {
 			
-			smallerSuccessor = (Node) smallerSuccessor.add(dataElement);
+			//TODO create method to add a whole Node
+			smallerSuccessor = (Node) smallerSuccessor.addNode();
 			return (Node) smallerSuccessor;
 			
 		}else {

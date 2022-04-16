@@ -30,7 +30,8 @@ public class BinaryTree extends ListImplementation{
 		if(!(firstElement instanceof LastNode)) {
 			
 			DataElement elementToRemove = ((Node) firstElement).getData();
-			((Node) firstElement).remove(elementToRemove);
+			Node temp = ((Node) firstElement).remove(elementToRemove);
+			firstElement = (temp != null) ? temp : firstElement;
 			
 		}
 		
