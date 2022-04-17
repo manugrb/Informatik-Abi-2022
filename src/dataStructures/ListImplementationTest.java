@@ -51,15 +51,15 @@ public class ListImplementationTest extends ImplementationTest{
 	public boolean testRemove(boolean print) {
 		boolean testPassed = true;
 		
-		ListImplementation[] testObjects = createTestObjects(true, true, true, 1, 1);
+		ListImplementation[] testObjects = createTestObjects(true, true, true, 5, 5);
 		
 		for(ListImplementation testObject : testObjects) {
 			
-			if(testObject.getElements().length == 1 && testObject.getElements()[0] != null) {
+			if(testObject.getElements().length == 5 && testObject.getElements()[4] != null) {
 				
 				testObject.remove();
 				
-				if(testObject.getElements().length == 1 && testObject.getElements()[0] == null) {
+				if(testObject.getElements().length == 5 && testObject.getElements()[4] == null) {
 					
 					if(print) {
 						System.out.println("remove test passed.");
