@@ -42,7 +42,7 @@ public class Node extends TreeElement{
 	}
 	
 	@Override
-	public Node remove(DataElement dataElement) {
+	public TreeElement remove(DataElement dataElement) {
 		
 		if(this.data == dataElement) {
 			
@@ -52,11 +52,13 @@ public class Node extends TreeElement{
 			}
 			if(smallerSuccessor instanceof Node) {
 				return (Node) smallerSuccessor;
+			}else {
+				return new LastNode();
 			}
 				
 		}else {
 		
-			Node replacement = smallerSuccessor.remove(dataElement);
+			TreeElement replacement = smallerSuccessor.remove(dataElement);
 			if(replacement != null) {
 				smallerSuccessor = replacement;
 			}else {
@@ -68,9 +70,9 @@ public class Node extends TreeElement{
 				
 			}
 			
+			return null;
+			
 		}
-		
-		return null;
 	}
 
 	@Override

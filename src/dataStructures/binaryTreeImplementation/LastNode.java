@@ -19,8 +19,8 @@ public class LastNode extends TreeElement{
 	}
 	
 	@Override
-	public Node remove(DataElement dataElement) {
-		return null;
+	public TreeElement remove(DataElement dataElement) {
+		return this;
 	}
 
 	@Override

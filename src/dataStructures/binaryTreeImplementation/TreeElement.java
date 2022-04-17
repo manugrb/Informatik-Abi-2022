@@ -6,7 +6,7 @@ public abstract class TreeElement {
 
 	public abstract Node add(DataElement dataElement);
 	public abstract Node addNode(Node node);
-	public abstract Node remove(DataElement dataElement);
+	public abstract TreeElement remove(DataElement dataElement);
 	public abstract void printPreOrder();
 	public abstract void printInOrder();
 	public abstract void printPostOrder();
