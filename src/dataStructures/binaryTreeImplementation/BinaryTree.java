@@ -47,8 +47,7 @@ public class BinaryTree extends ListImplementation{
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		return (firstElement instanceof LastNode);
 	}
 
 	@Override
