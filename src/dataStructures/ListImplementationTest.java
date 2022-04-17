@@ -312,7 +312,11 @@ public class ListImplementationTest extends ImplementationTest{
 		
 		User[] testElements = new User[nTestElements];
 		
-		for(int i = 0; i < nTestElements; i++) {
+		if(nTestElements > 0) {
+			testElements[0] = new User(4, 4, "First Guy");
+		}
+		
+		for(int i = 1; i < nTestElements; i++) {
 			
 			testElements[i] = new User(i, i * 2, "Mark Zuck");
 			
