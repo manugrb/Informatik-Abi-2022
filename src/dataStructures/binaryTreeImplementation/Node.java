@@ -30,8 +30,15 @@ public class Node extends TreeElement{
 	
 	@Override
 	public Node addNode(Node node) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		boolean bigger = (node.getData().compare(data) > 0);
+		if(bigger) {
+			biggerSuccessor = biggerSuccessor.addNode(node);
+		}else {
+			smallerSuccessor = smallerSuccessor.addNode(node);
+		}
+		
+		return this;
 	}
 	
 	@Override
@@ -39,8 +46,10 @@ public class Node extends TreeElement{
 		
 		if(this.data == dataElement) {
 			
-			//TODO create method to add a whole Node
-			smallerSuccessor = (Node) smallerSuccessor.addNode();
+			
+			if(biggerSuccessor instanceof Node) {
+				smallerSuccessor = smallerSuccessor.addNode((Node) biggerSuccessor);
+			}
 			return (Node) smallerSuccessor;
 			
 		}else {
