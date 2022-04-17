@@ -314,7 +314,7 @@ public class ListImplementationTest extends ImplementationTest{
 		
 		for(int i = 0; i < nTestElements; i++) {
 			
-			testElements[i] = new User();
+			testElements[i] = new User(i, i * 2, "Mark Zuck");
 			
 		}
 		
