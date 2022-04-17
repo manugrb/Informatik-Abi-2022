@@ -50,8 +50,10 @@ public class Node extends TreeElement{
 			if(biggerSuccessor instanceof Node) {
 				smallerSuccessor = smallerSuccessor.addNode((Node) biggerSuccessor);
 			}
-			return (Node) smallerSuccessor;
-			
+			if(smallerSuccessor instanceof Node) {
+				return (Node) smallerSuccessor;
+			}
+				
 		}else {
 		
 			Node replacement = smallerSuccessor.remove(dataElement);
@@ -66,9 +68,9 @@ public class Node extends TreeElement{
 				
 			}
 			
-			return null;
-			
 		}
+		
+		return null;
 	}
 
 	@Override
