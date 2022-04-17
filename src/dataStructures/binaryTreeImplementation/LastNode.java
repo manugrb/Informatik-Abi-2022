@@ -14,6 +14,12 @@ public class LastNode extends TreeElement{
 	}
 	
 	@Override
+	public Node addNode(Node node) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	@Override
 	public Node remove(DataElement dataElement) {
 		return null;
 	}
