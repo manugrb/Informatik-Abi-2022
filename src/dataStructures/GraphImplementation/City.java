@@ -14,4 +14,11 @@ public class City extends DataElement{
 		return "Stadt " + name;
 	}
 
+	@Override
+	public void print() {
+		
+		System.out.println("This is: Stadt " + name + " it has " + nFreeHotels + " free Hotels. It is " + attractivityScore + " attractive and has " + reviewData + "/5 stars.");
+		
+	}
+
 }

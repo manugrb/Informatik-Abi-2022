@@ -17,5 +17,7 @@ public abstract class DataElement {
 	public int getReviewData() {
 		return reviewData;
 	}
+	
+	public abstract void print();
 
 }

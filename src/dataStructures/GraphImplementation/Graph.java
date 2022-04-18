@@ -16,9 +16,7 @@ public class Graph {
 		int endId = getNodeId(end);
 		boolean inputValid = (startId != -1) && (endId != -1);
 		if(inputValid) {
-			
-			
-			
+			adjacencyMatrix[startId][endId] = value;
 		}
 		
 	}
