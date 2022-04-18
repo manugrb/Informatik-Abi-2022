@@ -17,7 +17,7 @@ public class Node extends TreeElement{
 	@Override
 	public Node add(DataElement dataElement) {
 		
-		if(dataElement.compare(data) > 0) {
+		if(dataElement.compare(data) < 0) {
 			biggerSuccessor = biggerSuccessor.add(dataElement);
 		}
 		else {
@@ -31,7 +31,7 @@ public class Node extends TreeElement{
 	@Override
 	public Node addNode(Node node) {
 		
-		boolean bigger = (node.getData().compare(data) > 0);
+		boolean bigger = (node.getData().compare(data) < 0);
 		if(bigger) {
 			biggerSuccessor = biggerSuccessor.addNode(node);
 		}else {
