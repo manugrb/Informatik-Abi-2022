@@ -11,7 +11,15 @@ public class Graph {
 	}
 	
 	public void addConnection(Node start, Node end, int value) {
-	
+		
+		int startId = getNodeId(start);
+		int endId = getNodeId(end);
+		boolean inputValid = (startId != -1) && (endId != -1);
+		if(inputValid) {
+			
+			
+			
+		}
 		
 	}
 	
@@ -24,17 +32,16 @@ public class Graph {
 		
 	}
 	
-	private boolean ckeckIfInGraph(Node checkNode) {
-		
-		for(Node node : nodes) {
-			if(node == checkNode) {
-				return true;
+	private int getNodeId(Node node) {
+		for(int i = 0; i < nodes.length; i++) {
+			
+			if(nodes[i] == node){
+				return i;
 			}
+			
 		}
 		
-		return false;
+		return -1;
 	}
-	
-
 
 }
