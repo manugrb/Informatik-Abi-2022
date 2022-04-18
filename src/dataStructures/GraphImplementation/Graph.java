@@ -26,7 +26,19 @@ public class Graph {
 		return 0;
 	}
 	
-	public void printAll() {
+	public void printAllFromNode(Node start) {
+		
+		int nodeId = getNodeId(start);
+		
+		int iterationNode = nodeId;
+		for(int i = 0; i < adjacencyMatrix[nodeId].length; i++) {
+			
+			if(adjacencyMatrix[nodeId][i] > 0) {
+				nodes[i].setVisited(true);
+				iterationNode = i;
+			}
+			
+		}
 		
 	}
 	
