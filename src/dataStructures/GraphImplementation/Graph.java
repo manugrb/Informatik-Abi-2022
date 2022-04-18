@@ -11,6 +11,7 @@ public class Graph {
 	}
 	
 	public void addConnection(Node start, Node end, int value) {
+	
 		
 	}
 	
@@ -25,7 +26,15 @@ public class Graph {
 	
 	private boolean ckeckIfInGraph(Node checkNode) {
 		
+		for(Node node : nodes) {
+			if(node == checkNode) {
+				return true;
+			}
+		}
+		
 		return false;
 	}
+	
+
 
 }
