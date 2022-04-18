@@ -77,19 +77,28 @@ public class Node extends TreeElement{
 
 	@Override
 	public void printPreOrder() {
-		// TODO Auto-generated method stub
+		
+		this.data.print();
+		smallerSuccessor.printPreOrder();
+		biggerSuccessor.printPreOrder();
 		
 	}
 
 	@Override
 	public void printInOrder() {
-		// TODO Auto-generated method stub
+		
+		smallerSuccessor.printInOrder();
+		this.data.print();
+		biggerSuccessor.printInOrder();
 		
 	}
 
 	@Override
 	public void printPostOrder() {
-		// TODO Auto-generated method stub
+		
+		smallerSuccessor.printPostOrder();
+		biggerSuccessor.printPostOrder();
+		this.data.print();
 		
 	}
 

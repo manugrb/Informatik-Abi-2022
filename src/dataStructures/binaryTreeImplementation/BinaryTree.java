@@ -41,7 +41,15 @@ public class BinaryTree extends ListImplementation{
 
 	@Override
 	public void printAll() {
-		// TODO Auto-generated method stub
+	
+		System.out.println("\n print preorder:");
+		firstElement.printPreOrder();
+		
+		System.out.println("\n print inorder:");
+		firstElement.printInOrder();
+		
+		System.out.println("\n print postOrder:");
+		firstElement.printPostOrder();
 		
 	}
 
