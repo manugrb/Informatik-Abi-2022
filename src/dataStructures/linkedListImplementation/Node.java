@@ -19,9 +19,10 @@ public class Node extends ListElement{
 	}
 	
 	@Override
-	public void add(DataElement dataElement, Node precessor) {
+	public Node add(DataElement dataElement) {
 		
-		successor.add(dataElement, this);
+		successor = successor.add(dataElement);
+		return this;
 
 	}
 	

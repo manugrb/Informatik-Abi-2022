@@ -5,11 +5,11 @@ import dataStructures.DataElement;
 public class LastNode extends ListElement{
 
 	@Override
-	public void add(DataElement dataElement, Node precessor) {
+	public Node add(DataElement dataElement) {
 		
 		Node newElement = new Node(dataElement);
 		newElement.setSuccessor(this);
-		precessor.setSuccessor(newElement);
+		return newElement;
 		
 	}
 
