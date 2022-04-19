@@ -1,5 +1,7 @@
 package dataStructures;
 
+import dataStructures.GraphImplementation.GraphImplementationTest;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -20,6 +22,17 @@ public class Main {
 		}
 		
 		tester.testPrintAll();
+		
+		System.out.println("----------Graph test:-----------");
+		GraphImplementationTest graphTester = new GraphImplementationTest();
+		allTestsPassed = true;
+		
+		
+		allTestsPassed = allTestsPassed && graphTester.testGetConnection();
+		
+		if(allTestsPassed) {
+			System.out.println("All tests passed!");
+		}
 
 	}
 

@@ -2,7 +2,7 @@ package dataStructures.GraphImplementation;
 
 public class GraphImplementationTest {
 	
-	public boolean checkGetConnection() {
+	public boolean testGetConnection() {
 		
 		//just some random values...
 		int firstNodeIndex = 2;
