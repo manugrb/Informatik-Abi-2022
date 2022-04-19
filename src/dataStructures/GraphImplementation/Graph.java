@@ -20,7 +20,7 @@ public class Graph {
 		
 		for(int i = 0; i < maxNNodes; i++) {
 			
-			for(int j = 0; i < maxNNodes; j++) {
+			for(int j = 0; j < maxNNodes; j++) {
 				adjacencyMatrix[i][j] = -1;
 			}
 			
@@ -47,7 +47,7 @@ public class Graph {
 		int startIndex = getNodeId(start);
 		int endIndex = getNodeId(end);
 		
-		if(isValidIndex(startIndex) && isValidIndex(endIndex)) {
+		if(isIndexInUse(startIndex) && isIndexInUse(endIndex)) {
 			return adjacencyMatrix[startIndex][endIndex];
 		}
 		
@@ -68,7 +68,7 @@ public class Graph {
 	
 	public Node getNode(int index) {
 		
-		if(index > 0 && index < nNodes) {
+		if(isIndexInUse(index)) {
 			return nodes[index];
 		}
 		
@@ -109,7 +109,11 @@ public class Graph {
 	}
 	
 	private boolean isValidIndex(int index) {
-		return (index > 0 && index < nNodes);
+		return (index >= 0 && index < maxNNodes);
+	}
+	
+	private boolean isIndexInUse(int index) {
+		return (index >= 0 && index < nNodes);
 	}
 	
 	private int getNodeId(Node node) {

@@ -16,6 +16,7 @@ public class GraphImplementationTest {
 		testObject.addConnection(firstNode, lastNode, connectionValue);
 		testObject.addConnection(lastNode, firstNode, 0);
 		
+		System.out.println("firstNode: " + firstNode +  "lastNode: " + lastNode + " connectionValue: " + connectionValue + " got Value: " + testObject.getConnection(firstNode, lastNode));
 		return (testObject.getConnection(firstNode, lastNode) == connectionValue);
 		
 	}
@@ -26,6 +27,7 @@ public class GraphImplementationTest {
 		
 		City[] testData = createTestData(nNodes);
 		for(int i = 0; i < nNodes; i++) {
+			System.out.println("helo");
 			testObject.addNode(testData[i]);
 		}
 		
