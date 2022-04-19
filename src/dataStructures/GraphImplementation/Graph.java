@@ -44,14 +44,19 @@ public class Graph {
 	
 	public int getConnection(Node start, Node end) {
 		
+		int startIndex = getNodeId(start);
+		int endIndex = getNodeId(end);
 		
+		if(isValidIndex(startIndex) && isValidIndex(endIndex)) {
+			return adjacencyMatrix[startIndex][endIndex];
+		}
 		
-		return 0;
+		return -2;
 	}
 	
 	public boolean addNode(City newNodeData) {
 		
-		if(checkIfIndexValid(nNodes)) {
+		if(isValidIndex(nNodes)) {
 			nodes[nNodes] = new Node(newNodeData);
 			nNodes++;
 			return true;
@@ -103,7 +108,7 @@ public class Graph {
 		
 	}
 	
-	private boolean checkIfIndexValid(int index) {
+	private boolean isValidIndex(int index) {
 		return (index > 0 && index < nNodes);
 	}
 	
