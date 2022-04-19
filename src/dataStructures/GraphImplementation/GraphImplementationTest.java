@@ -29,6 +29,7 @@ public class GraphImplementationTest {
 			testObject.addNode(testData[i]);
 		}
 		
+		return testObject;
 		
 	}
 	

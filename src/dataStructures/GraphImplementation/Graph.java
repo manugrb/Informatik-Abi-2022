@@ -43,6 +43,33 @@ public class Graph {
 		return 0;
 	}
 	
+	public boolean addNode(City newNodeData) {
+		
+		for(int i = 0; i < nodes.length; i++) {
+			
+			if(!(nodes[i] instanceof Node)) {
+				
+				nodes[i] = new Node(newNodeData);
+				return true;
+				
+			}
+			
+		}
+		
+		return false;
+		
+	}
+	
+	public Node getNode(int index) {
+		
+		if(index > 0 && index < nodes.length) {
+			return nodes[index];
+		}
+		
+		return null;
+		
+	}
+	
 	public void printAllFromNode(Node start) {
 		
 		int nodeId = getNodeId(start);
