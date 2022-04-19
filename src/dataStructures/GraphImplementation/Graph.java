@@ -31,6 +31,8 @@ public class Graph {
 		int nodeId = getNodeId(start);
 		
 		if(nodeId != 0) {
+			resetNodesVisited();
+			
 			recursivePrintAll(nodeId);
 		}
 		
@@ -38,7 +40,15 @@ public class Graph {
 	
 	private void recursivePrintAll(int id) {
 		
+		nodes[id].setVisited(true);
 		
+	}
+	
+	private void resetNodesVisited() {
+		
+		for(Node node : nodes) {
+			node.setVisited(false);
+		}
 		
 	}
 	
