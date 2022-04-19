@@ -4,19 +4,23 @@ public class Graph {
 	
 	private int[][] adjacencyMatrix;
 	Node[] nodes;
+	int maxNNodes;
+	int nNodes;
 	
 	public Graph(int maxNNodes) {
 		nodes = new Node[maxNNodes];
 		adjacencyMatrix = new int[maxNNodes][maxNNodes];
+		this.maxNNodes = maxNNodes;
+		nNodes = 0;
 		
 		prepareGraph();
 	}
 	
 	private void prepareGraph() {
 		
-		for(int i = 0; i < adjacencyMatrix.length; i++) {
+		for(int i = 0; i < maxNNodes; i++) {
 			
-			for(int j = 0; i < adjacencyMatrix[i].length; j++) {
+			for(int j = 0; i < maxNNodes; j++) {
 				adjacencyMatrix[i][j] = -1;
 			}
 			
@@ -40,12 +44,14 @@ public class Graph {
 	
 	public int getConnection(Node start, Node end) {
 		
+		
+		
 		return 0;
 	}
 	
 	public boolean addNode(City newNodeData) {
 		
-		for(int i = 0; i < nodes.length; i++) {
+		for(int i = 0; i < maxNNodes; i++) {
 			
 			if(!(nodes[i] instanceof Node)) {
 				
@@ -62,7 +68,7 @@ public class Graph {
 	
 	public Node getNode(int index) {
 		
-		if(index > 0 && index < nodes.length) {
+		if(index > 0 && index < nNodes) {
 			return nodes[index];
 		}
 		
@@ -86,7 +92,7 @@ public class Graph {
 		
 		nodes[id].setVisited(true);
 		
-		for(int i = 0; i < adjacencyMatrix[id].length; i++) {
+		for(int i = 0; i < nNodes; i++) {
 			if(adjacencyMatrix[id][i] != -1) {
 				recursivePrintAll(i);
 			}
@@ -103,7 +109,7 @@ public class Graph {
 	}
 	
 	private int getNodeId(Node node) {
-		for(int i = 0; i < nodes.length; i++) {
+		for(int i = 0; i < nNodes; i++) {
 			
 			if(nodes[i] == node){
 				return i;
