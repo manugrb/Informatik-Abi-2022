@@ -42,6 +42,12 @@ public class Graph {
 		
 		nodes[id].setVisited(true);
 		
+		for(int i = 0; i < adjacencyMatrix[id].length; i++) {
+			if(adjacencyMatrix[id][i] != -1) {
+				recursivePrintAll(i);
+			}
+		}
+		
 	}
 	
 	private void resetNodesVisited() {
