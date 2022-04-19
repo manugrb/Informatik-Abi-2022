@@ -30,15 +30,15 @@ public class Graph {
 		
 		int nodeId = getNodeId(start);
 		
-		int iterationNode = nodeId;
-		for(int i = 0; i < adjacencyMatrix[nodeId].length; i++) {
-			
-			if(adjacencyMatrix[nodeId][i] > 0) {
-				nodes[i].setVisited(true);
-				iterationNode = i;
-			}
-			
+		if(nodeId != 0) {
+			recursivePrintAll(nodeId);
 		}
+		
+	}
+	
+	private void recursivePrintAll(int id) {
+		
+		
 		
 	}
 	
