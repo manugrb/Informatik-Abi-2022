@@ -51,15 +51,10 @@ public class Graph {
 	
 	public boolean addNode(City newNodeData) {
 		
-		for(int i = 0; i < maxNNodes; i++) {
-			
-			if(!(nodes[i] instanceof Node)) {
-				
-				nodes[i] = new Node(newNodeData);
-				return true;
-				
-			}
-			
+		if(checkIfIndexValid(nNodes)) {
+			nodes[nNodes] = new Node(newNodeData);
+			nNodes++;
+			return true;
 		}
 		
 		return false;
@@ -106,6 +101,10 @@ public class Graph {
 			node.setVisited(false);
 		}
 		
+	}
+	
+	private boolean checkIfIndexValid(int index) {
+		return (index > 0 && index < nNodes);
 	}
 	
 	private int getNodeId(Node node) {
