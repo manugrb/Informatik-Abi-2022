@@ -8,6 +8,23 @@ public class Graph {
 	public Graph(int maxNNodes) {
 		nodes = new Node[maxNNodes];
 		adjacencyMatrix = new int[maxNNodes][maxNNodes];
+		
+		prepareGraph();
+	}
+	
+	private void prepareGraph() {
+		
+		for(int i = 0; i < adjacencyMatrix.length; i++) {
+			
+			for(int j = 0; i < adjacencyMatrix[i].length; j++) {
+				adjacencyMatrix[i][j] = -1;
+			}
+			
+			//The effort to go nowhere at all (same city) is always 0...
+			adjacencyMatrix[i][i] = 0;
+			
+		}
+		
 	}
 	
 	public void addConnection(Node start, Node end, int value) {
