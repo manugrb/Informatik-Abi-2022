@@ -42,8 +42,11 @@ public class GraphImplementationTest {
 		boolean testPassed = (testObject.getConnection(firstNode, lastNode) == connectionValue);
 		if(testPassed) {
 			testObject.removeNode(lastNode);
-			testPassed = testPassed && (testObject.getNode(lastNodeIndex) == null);
-			testPassed = testPassed && (testObject.getConnection(firstNode, lastNode) == -1);
+			testPassed = (testObject.getNode(lastNodeIndex) == null);
+			testPassed = testPassed && (testObject.getConnection(firstNode, lastNode) < 0);
+			if(testPassed) {
+				System.out.println("remove test passed!");
+			}
 			return testPassed;
 		}
 		

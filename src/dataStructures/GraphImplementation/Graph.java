@@ -85,6 +85,7 @@ public class Graph {
 				adjacencyMatrix[index][i] = -1;
 				adjacencyMatrix[i][index] = -1;
 			}
+			//can't change nNodes because nNodes is more like the nodes max value...
 			//No need to set the value of adjacencyMatrix[index][index] to 0, because this node does not exist and thus does not have a direct way to itself.
 		}
 	}
