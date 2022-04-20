@@ -32,7 +32,7 @@ public class GraphImplementationTest {
 		Graph testObject = createTestObject(10);
 		makeRandomConnections(testObject);
 		
-		System.out.println("\n\n");
+		System.out.println("\n");
 		testObject.printAllFromNode(testObject.getNode(0));
 		System.out.println("\n2nd iteration");
 		testObject.printAllFromNode(testObject.getNode(9));

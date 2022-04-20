@@ -36,7 +36,6 @@ public class Graph {
 		int startId = getNodeId(start);
 		int endId = getNodeId(end);
 		boolean inputValid = (startId != -1) && (endId != -1);
-		if(startId == 0) System.out.println("yeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee" + inputValid);
 		if(inputValid) {
 			adjacencyMatrix[startId][endId] = value;
 		}
