@@ -29,6 +29,7 @@ public class Main {
 		
 		
 		allTestsPassed = allTestsPassed && graphTester.testGetConnection();
+		allTestsPassed = allTestsPassed && graphTester.testRemove();
 		
 		if(allTestsPassed) {
 			System.out.println("All tests passed!");

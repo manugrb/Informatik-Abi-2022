@@ -27,6 +27,29 @@ public class GraphImplementationTest {
 		
 	}
 	
+	public boolean testRemove() {
+		
+		int firstNodeIndex = 1;
+		int lastNodeIndex = 5;
+		int connectionValue = 420;
+		
+		Graph testObject = createTestObject(7);
+		Node firstNode = testObject.getNode(firstNodeIndex);
+		Node lastNode = testObject.getNode(lastNodeIndex);
+		
+		testObject.addConnection(firstNode, lastNode, connectionValue);
+		
+		boolean testPassed = (testObject.getConnection(firstNode, lastNode) == connectionValue);
+		if(testPassed) {
+			testObject.removeNode(lastNode);
+			testPassed = testPassed && (testObject.getNode(lastNodeIndex) == null);
+			testPassed = testPassed && (testObject.getConnection(firstNode, lastNode) == -1);
+			return testPassed;
+		}
+		
+		return false;
+	}
+	
 	public void testPrintAll() {
 		
 		Graph testObject = createTestObject(10);
