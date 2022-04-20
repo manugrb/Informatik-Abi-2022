@@ -66,6 +66,18 @@ public class Graph {
 		
 	}
 	
+	public boolean removeNode(Node node) {
+		
+		int index = getNodeId(node);
+		if(isValidIndex(index)) {
+			
+			nodes[index] = null;
+			
+		}
+		
+		return false;
+	}
+	
 	public Node getNode(int index) {
 		
 		if(isIndexInUse(index)) {
