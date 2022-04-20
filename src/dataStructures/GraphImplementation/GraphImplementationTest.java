@@ -1,5 +1,7 @@
 package dataStructures.GraphImplementation;
 
+import java.util.Random;
+
 public class GraphImplementationTest {
 	
 	public boolean testGetConnection() {
@@ -16,8 +18,24 @@ public class GraphImplementationTest {
 		testObject.addConnection(firstNode, lastNode, connectionValue);
 		testObject.addConnection(lastNode, firstNode, 0);
 		
-		System.out.println("firstNode: " + firstNode +  "lastNode: " + lastNode + " connectionValue: " + connectionValue + " got Value: " + testObject.getConnection(firstNode, lastNode));
-		return (testObject.getConnection(firstNode, lastNode) == connectionValue);
+		boolean testPassed = (testObject.getConnection(firstNode, lastNode) == connectionValue);
+		if(testPassed) {
+			System.out.println("get Connection test passed!");
+		}
+		
+		return testPassed;
+		
+	}
+	
+	public void testPrintAll() {
+		
+		Graph testObject = createTestObject(10);
+		makeRandomConnections(testObject);
+		
+		System.out.println("\n\n");
+		testObject.printAllFromNode(testObject.getNode(0));
+		System.out.println("\n2nd iteration");
+		testObject.printAllFromNode(testObject.getNode(9));
 		
 	}
 	
@@ -27,7 +45,6 @@ public class GraphImplementationTest {
 		
 		City[] testData = createTestData(nNodes);
 		for(int i = 0; i < nNodes; i++) {
-			System.out.println("helo");
 			testObject.addNode(testData[i]);
 		}
 		
@@ -41,12 +58,29 @@ public class GraphImplementationTest {
 		
 		for(int i = 0; i < nObjects; i++) {
 			
-			City testObject = new City("Bikini Bottom", i, nObjects - i, (int) (i / nObjects));
+			City testObject = new City("Bikini Bottom", i, nObjects - i, i % 5);
 			testData[i] = testObject;
 			
 		}
 		
 		return testData;
+		
+	}
+	
+	private void makeRandomConnections(Graph graph) {
+		
+		int nNodes = graph.getNNodes();
+		Random rand = new Random();
+		
+		for(int i = 0; i < nNodes * 3; i++) {
+			
+			int firstRandom = rand.nextInt(nNodes);
+			int secondRandom = rand.nextInt(nNodes);
+			int connectionValue = rand.nextInt(100);
+			
+			graph.addConnection(graph.getNode(firstRandom), graph.getNode(secondRandom), connectionValue);
+			
+		}
 		
 	}
 

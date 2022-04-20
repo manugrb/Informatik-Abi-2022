@@ -33,6 +33,8 @@ public class Main {
 		if(allTestsPassed) {
 			System.out.println("All tests passed!");
 		}
+		
+		graphTester.testPrintAll();
 
 	}
 

@@ -36,6 +36,7 @@ public class Graph {
 		int startId = getNodeId(start);
 		int endId = getNodeId(end);
 		boolean inputValid = (startId != -1) && (endId != -1);
+		if(startId == 0) System.out.println("yeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee" + inputValid);
 		if(inputValid) {
 			adjacencyMatrix[startId][endId] = value;
 		}
@@ -71,7 +72,6 @@ public class Graph {
 		if(isIndexInUse(index)) {
 			return nodes[index];
 		}
-		
 		return null;
 		
 	}
@@ -80,7 +80,7 @@ public class Graph {
 		
 		int nodeId = getNodeId(start);
 		
-		if(nodeId != 0) {
+		if(nodeId != -1) {
 			resetNodesVisited();
 			
 			recursivePrintAll(nodeId);
@@ -88,13 +88,20 @@ public class Graph {
 		
 	}
 	
+	public int getNNodes() {
+		return nNodes;
+	}
+	
 	private void recursivePrintAll(int id) {
 		
 		nodes[id].setVisited(true);
+		nodes[id].print();
 		
 		for(int i = 0; i < nNodes; i++) {
 			if(adjacencyMatrix[id][i] != -1) {
-				recursivePrintAll(i);
+				if(!nodes[i].getVisited()) {
+					recursivePrintAll(i);
+				}
 			}
 		}
 		
