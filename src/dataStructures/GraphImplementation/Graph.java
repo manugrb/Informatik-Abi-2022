@@ -72,10 +72,21 @@ public class Graph {
 		if(isValidIndex(index)) {
 			
 			nodes[index] = null;
+			clearNodeInMatrix(index);
 			
 		}
 		
 		return false;
+	}
+	
+	private void clearNodeInMatrix(int index) {
+		if(isValidIndex(index)) {
+			for(int i = 0; i < nNodes; i++) {
+				adjacencyMatrix[index][i] = -1;
+				adjacencyMatrix[i][index] = -1;
+			}
+			//No need to set the value of adjacencyMatrix[index][index] to 0, because this node does not exist and thus does not have a direct way to itself.
+		}
 	}
 	
 	public Node getNode(int index) {
