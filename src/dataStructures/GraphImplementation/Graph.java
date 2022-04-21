@@ -54,6 +54,28 @@ public class Graph {
 		return -2;
 	}
 	
+	public int getShortestConnection(Node startNode, Node destinationNode) {
+		
+		int shortestWay = -1;
+		
+		
+		//bruteforcing... this is probably not the best way to do this...
+		for(int i = 0; i < nNodes; i++) {
+			
+			for(int j = 0; j < nNodes; j++) {
+				
+				for(int k = 0; k < nNodes; k++) {
+					
+					
+					
+				}
+				
+			}
+			
+		}
+		
+	}
+	
 	public boolean addNode(City newNodeData) {
 		
 		if(isValidIndex(nNodes)) {
