@@ -183,7 +183,7 @@ public class LicensePlateFiniteMachine {
 	private void setNumbers() {
 		int startChar = (int) '0';
 		
-		for(int i = 0; i < nLetters; i++) {
+		for(int i = 0; i < nNumbers; i++) {
 			numbers[i] = (char) (i + startChar);
 		}
 		
