@@ -18,6 +18,8 @@ public class LicensePlateFiniteMachine {
 			currentState = switchState(currentState, input.charAt(i));
 		}
 		
+		
+		
 	}
 	
 	
@@ -81,7 +83,40 @@ public class LicensePlateFiniteMachine {
 			}
 			return -1;
 
+		
+		case(7):
+			if(isInNumbers(character)) {
+				return 8;
+			}
+			return -1;
+		
 			
+		case(8):
+			if(isInNumbers(character)) {
+				return 9;
+			}
+			return -1;
+			
+		
+		case(9):
+			if(isInNumbers(character)) {
+				return 10;
+			}
+			return -1;
+			
+		case(10):
+			if(isInNumbers(character)) {
+				return 11;
+			}
+			return -1;
+		
+		
+		case(11):
+			return -1;
+		
+		default:
+			return -1;
+		
 		}
 		
 		
@@ -99,8 +134,18 @@ public class LicensePlateFiniteMachine {
 		return false;
 	}
 	
+	private boolean isInNumbers(char character) {
+		for(int i = 0; i < numbers.length; i++) {
+			if(character == numbers[i]) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	private boolean isSpace(char character) {
 		return (character == space);
 	}
+	
 
 }
