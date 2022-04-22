@@ -3,11 +3,22 @@ package formalLanguage;
 public class LicensePlateFiniteMachine {
 	
 	private char[] letters;
+	private int nLetters;
 	private char[] numbers;
+	private int nNumbers;
 	private char space = ' ';
 	private int[] endStates;
+	private int nEndStates;
 	
 	public LicensePlateFiniteMachine() {
+		
+		nLetters = 26;
+		nNumbers = 10;
+		nEndStates = 4;
+		
+		letters = new char[nLetters];
+		numbers = new char[nNumbers];
+		endStates = new int[nEndStates];
 		
 		setLetters();
 		setNumbers();
@@ -159,6 +170,33 @@ public class LicensePlateFiniteMachine {
 			}
 		}
 		return false;
+	}
+	
+	private void setLetters() {
+		int startChar = (int) 'A';
+		
+		for(int i = 0; i < nLetters; i++) {
+			letters[i] = (char) (i + startChar);
+		}
+	}
+	
+	private void setNumbers() {
+		int startChar = (int) '0';
+		
+		for(int i = 0; i < nLetters; i++) {
+			numbers[i] = (char) (i + startChar);
+		}
+		
+	}
+	
+	private void setEndStates() {
+		int firstEndState = 8;
+		
+		for(int i = 0; i < 4; i++) {
+			endStates[i] = i + firstEndState;
+		}
+		
+		
 	}
 	
 
