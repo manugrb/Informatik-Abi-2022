@@ -5,8 +5,11 @@ public class LicensePlateFiniteMachine {
 	private char[] letters;
 	private char[] numbers;
 	private char space = ' ';
+	private int[] endStates;
 	
 	public LicensePlateFiniteMachine() {
+		
+		
 		
 	}
 	
@@ -18,7 +21,7 @@ public class LicensePlateFiniteMachine {
 			currentState = switchState(currentState, input.charAt(i));
 		}
 		
-		
+		return (isInEndStates(currentState));
 		
 	}
 	
@@ -145,6 +148,15 @@ public class LicensePlateFiniteMachine {
 	
 	private boolean isSpace(char character) {
 		return (character == space);
+	}
+	
+	private boolean isInEndStates(int state) {
+		for(int i = 0; i < endStates.length; i++) {
+			if(endStates[i] == state) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 
