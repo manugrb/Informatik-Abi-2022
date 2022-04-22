@@ -9,7 +9,9 @@ public class LicensePlateFiniteMachine {
 	
 	public LicensePlateFiniteMachine() {
 		
-		
+		setLetters();
+		setNumbers();
+		setEndStates();
 		
 	}
 	
