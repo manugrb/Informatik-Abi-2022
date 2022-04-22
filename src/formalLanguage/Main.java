@@ -8,6 +8,7 @@ public class Main {
 		boolean allTestsPassed = true;
 		
 		allTestsPassed = allTestsPassed && test.testCorrectLicensePlate();
+		allTestsPassed = allTestsPassed && test.testWrongFirstLetters();
 		
 		if(allTestsPassed) {
 			System.out.println("all tests passed");
