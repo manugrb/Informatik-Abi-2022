@@ -30,4 +30,12 @@ public class LastNode extends ListElement{
 		return -1;
 	}
 
+	@Override
+	public ListElement removeNode(DataElement dataElement) {
+		
+		System.out.println("could not remove node... Node not in List...");
+		return this;
+		
+	}
+
 }

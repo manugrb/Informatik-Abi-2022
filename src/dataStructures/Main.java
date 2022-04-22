@@ -16,6 +16,7 @@ public class Main {
 		allTestsPassed = allTestsPassed && tester.testInsertOrder(true);
 		allTestsPassed = allTestsPassed && tester.testRemoveOrder(true);
 		allTestsPassed = allTestsPassed && tester.testGetNElements(true);
+		allTestsPassed = allTestsPassed && tester.testRemoveNode(true);
 		
 		if(allTestsPassed) {
 			System.out.println("All tests passed!");

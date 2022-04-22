@@ -67,5 +67,15 @@ public class Node extends ListElement{
 		return data;
 	}
 
+	@Override
+	public ListElement removeNode(DataElement dataElement) {
+		
+		if(this.data == dataElement) {
+			return successor;
+		}
+		successor = successor.removeNode(dataElement);
+		return this;
+	}
+
 	
 }

@@ -258,6 +258,34 @@ public class ListImplementationTest extends ImplementationTest{
 		
 	}
 	
+	public boolean testRemoveNode(boolean print) {
+		
+		ListImplementation[] testObjects = createTestObjects(false, true, false, 10, 5);
+		LinkedList testObject = (LinkedList) testObjects[0];
+		
+		if(testObject.getNElements() == 5) {
+			
+			User testUser = new User(420, 69, "Mr. Yeet Elite");
+			testObject.insert(testUser);
+			
+			if(testObject.getNElements() == 6) {
+				
+				testObject.removeNode(testUser);
+				if(testObject.getNElements() == 5) {
+					return true;
+				}
+				
+			}
+			
+		}
+		
+		if(print) {
+			System.out.println("unexpected error in isEmptyTest... Test Failed :(");
+		}
+		return false;
+		
+	}
+	
 	private ListImplementation[] createTestObjects(boolean field, boolean linkedList, boolean binaryTree, int listSize, int nTestElements) {
 		
 		ListImplementation[] testObjects = null;

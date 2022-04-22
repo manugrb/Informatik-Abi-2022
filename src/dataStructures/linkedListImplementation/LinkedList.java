@@ -53,7 +53,11 @@ public class LinkedList extends ListImplementation{
 			
 		}
 		
+	}
+	
+	public void removeNode(DataElement data) {
 		
+		firstElement.removeNode(data);
 		
 	}
 

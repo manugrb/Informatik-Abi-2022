@@ -43,5 +43,21 @@ public class LicensePlateFiniteMachinetest {
 		
 		
 	}
+	
+	public boolean testWrongSecondLetters() {
+		
+		boolean testPassed = true;
+		
+		testPassed = testPassed && !testObject.checkString("AAA  AA 0000");
+		testPassed = testPassed && !testObject.checkString("AAAAA 0000");
+		testPassed = testPassed && !testObject.checkString("AAA AAA 0000");
+		testPassed = testPassed && !testObject.checkString("AAA  0000");
+		testPassed = testPassed && !testObject.checkString("AAA @@ 0000");
+		testPassed = testPassed && !testObject.checkString("AAA [[ 0000");
+		testPassed = testPassed && !testObject.checkString("AAA 65 0000");
+		
+		return testPassed;
+		
+	}
 
 }

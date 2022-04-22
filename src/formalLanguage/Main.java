@@ -9,6 +9,7 @@ public class Main {
 		
 		allTestsPassed = allTestsPassed && test.testCorrectLicensePlate();
 		allTestsPassed = allTestsPassed && test.testWrongFirstLetters();
+		allTestsPassed = allTestsPassed && test.testWrongSecondLetters();
 		
 		if(allTestsPassed) {
 			System.out.println("all tests passed");
