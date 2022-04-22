@@ -59,7 +59,34 @@ public class LicensePlateFiniteMachine {
 			}
 			return -1;
 			
+		case(4):
+			if(isInLetters(character)) {
+				return 5;
+			}
+			return -1;
+		
+		case(5):
+			if(isInLetters(character)) {
+				return 6;
+			}
+			if(isSpace(character)) {
+				return 7;
+			}
+			return -1;
+			
+		
+		case(6):
+			if(isSpace(character)) {
+				return 7;
+			}
+			return -1;
+
+			
 		}
+		
+		
+			
+			
 		
 	}
 	
